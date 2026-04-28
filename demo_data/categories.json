@@ -1,0 +1,8 @@
+[
+  { "name": "Technology", "icon": "Cpu", "color": "bg-blue-50 text-blue-600", "count": "1.2k" },
+  { "name": "Travel", "icon": "Globe", "color": "bg-teal-50 text-teal-600", "count": "850" },
+  { "name": "Lifestyle", "icon": "Coffee", "color": "bg-orange-50 text-orange-600", "count": "640" },
+  { "name": "Health", "icon": "Heart", "color": "bg-rose-50 text-rose-600", "count": "920" },
+  { "name": "Productivity", "icon": "Zap", "color": "bg-amber-50 text-amber-600", "count": "450" },
+  { "name": "Photography", "icon": "Camera", "color": "bg-indigo-50 text-indigo-600", "count": "310" }
+]
