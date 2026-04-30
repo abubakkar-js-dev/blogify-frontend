@@ -4,7 +4,7 @@ export const postsData = [
     "id": 1,
     "slug": "future-of-ai-2025",
     "tag": "Technology",
-    "tagColor": "bg-secondary/10 text-blue-700",
+    "tagColor": "bg-blue-100 text-blue-700",
     "title": "The Future of AI: What to Expect in 2025 and Beyond",
     "excerpt": "Artificial intelligence is evolving at breakneck speed. Explore the transformative trends that will redefine our world by 2025.",
     "author": "Noah Wilson",
@@ -14,13 +14,15 @@ export const postsData = [
     "avatar": "https://i.pravatar.cc/150?u=noah",
     "description": "Artificial intelligence is evolving at breakneck speed.",
     "bio": "Noah is a full-stack engineer and tech writer passionate about emerging web technologies and architectural patterns.",
-    "content": "<p>As we stand on the precipice of 2025, the trajectory of artificial intelligence is moving from simple assistive tools to complex, autonomous agents. The next phase of AI evolution is not just about smarter chatbots, but about deeply integrated systems that understand context, intent, and long-term goals.</p><h3>1. The Rise of Agentic AI</h3><p>We are moving past the era of \"prompting\" and into the era of \"delegating.\" Agentic AI systems will soon be able to execute multi-step workflows, from booking travel based on your preferences to managing complex project pipelines without constant human intervention.</p><blockquote>\"The future of AI is not a chatbot you talk to, but an assistant that works for you silently in the background.\"</blockquote><h3>2. Edge Intelligence</h3><p>Privacy and latency concerns are driving AI towards the edge. In 2025, we will see more sophisticated models running locally on smartphones and wearable devices, ensuring data security while providing real-time intelligence without the need for a cloud connection.</p><h3>3. Human-AI Collaboration</h3><p>The narrative of AI replacing humans is shifting towards synergy. Creative professionals are using AI to bypass the \"blank page\" problem, allowing for more time to be spent on high-level curation and strategic decision-making.</p>"
+    "content": "<p>As we stand on the precipice of 2025, the trajectory of artificial intelligence is moving from simple assistive tools to complex, autonomous agents. The next phase of AI evolution is not just about smarter chatbots, but about deeply integrated systems that understand context, intent, and long-term goals.</p><h3>1. The Rise of Agentic AI</h3><p>We are moving past the era of \"prompting\" and into the era of \"delegating.\" Agentic AI systems will soon be able to execute multi-step workflows, from booking travel based on your preferences to managing complex project pipelines without constant human intervention.</p><blockquote>\"The future of AI is not a chatbot you talk to, but an assistant that works for you silently in the background.\"</blockquote><h3>2. Edge Intelligence</h3><p>Privacy and latency concerns are driving AI towards the edge. In 2025, we will see more sophisticated models running locally on smartphones and wearable devices, ensuring data security while providing real-time intelligence without the need for a cloud connection.</p><h3>3. Human-AI Collaboration</h3><p>The narrative of AI replacing humans is shifting towards synergy. Creative professionals are using AI to bypass the \"blank page\" problem, allowing for more time to be spent on high-level curation and strategic decision-making.</p>",
+    "views": 4250,
+    "likes": 320
   },
   {
     "id": 2,
     "slug": "hidden-gems-europe",
     "tag": "Travel",
-    "tagColor": "bg-primary/10 text-teal-700",
+    "tagColor": "bg-teal-100 text-teal-700",
     "title": "Hidden Gems of Europe: 5 Underrated Cities for Your Next Trip",
     "excerpt": "Escape the tourist traps with our curated list of Europe's best-kept secrets.",
     "author": "Liam Johnson",
@@ -30,7 +32,9 @@ export const postsData = [
     "avatar": "https://i.pravatar.cc/150?u=liam",
     "description": "Europe is more than just Paris, London, and Rome.",
     "bio": "Liam is a global traveler who has visited over 50 countries alone, documenting the transformative power of solo exploration.",
-    "content": "<p>Europe is more than just Paris, London, and Rome. For those willing to venture off the beaten path, the continent offers treasures that are often more authentic, more affordable, and significantly less crowded.</p><h3>1. Ljubljana, Slovenia</h3><p>Often called \"Europe's greenest city,\" Ljubljana is a masterpiece of urban planning and charm. The pedestrian-only center, the emerald waters of the Ljubljanica River, and the stunning views of the Julian Alps make it an unmissable stop.</p><h3>2. Porto, Portugal</h3><p>While Lisbon gets all the hype, Porto offers a more intimate and rugged beauty. From the historic Ribeira district to the world-famous port wine cellars, it's a city built on tradition and soul.</p><blockquote>\"To travel is to discover that everyone is wrong about other countries.\"</blockquote><h3>3. Tallinn, Estonia</h3><p>Tallinn manages to perfectly blend its medieval past with a high-tech future. Its Old Town is one of the best-preserved in Europe, while the city remains a global leader in digital innovation.</p>"
+    "content": "<p>Europe is more than just Paris, London, and Rome. For those willing to venture off the beaten path, the continent offers treasures that are often more authentic, more affordable, and significantly less crowded.</p><h3>1. Ljubljana, Slovenia</h3><p>Often called \"Europe's greenest city,\" Ljubljana is a masterpiece of urban planning and charm. The pedestrian-only center, the emerald waters of the Ljubljanica River, and the stunning views of the Julian Alps make it an unmissable stop.</p><h3>2. Porto, Portugal</h3><p>While Lisbon gets all the hype, Porto offers a more intimate and rugged beauty. From the historic Ribeira district to the world-famous port wine cellars, it\\'s a city built on tradition and soul.</p><blockquote>\"To travel is to discover that everyone is wrong about other countries.\"</blockquote><h3>3. Tallinn, Estonia</h3><p>Tallinn manages to perfectly blend its medieval past with a high-tech future. Its Old Town is one of the best-preserved in Europe, while the city remains a global leader in digital innovation.</p>",
+    "views": 3120,
+    "likes": 245
   },
   {
     "id": 3,
@@ -46,7 +50,9 @@ export const postsData = [
     "avatar": "https://i.pravatar.cc/150?u=sophia",
     "description": "You don't need hours to be mindful.",
     "bio": "Sophia is a health coach and behavioral scientist who specializes in habit formation and sustainable lifestyle changes.",
-    "content": "<p>Mindfulness is often portrayed as sitting cross-legged on a mountain for hours. In reality, mindfulness is simply the practice of being present in whatever you are doing. For the busy professional, it's about finding \"micro-moments\" of clarity throughout the day.</p><h3>The 3-Breath Rule</h3><p>Whenever you transition between tasks—getting out of your car, opening your laptop, or starting a meeting—take three deep breaths. This resets your nervous system and prevents the \"carry-over\" stress from one task to the next.</p><h3>Mindful Eating</h3><p>Try to eat at least one meal a day without a screen. Focus on the taste, texture, and smell of your food. This surprisingly simple practice can drastically improve your digestion and relationship with food.</p><blockquote>\"Mindfulness isn't about clearing your mind, but about changing your relationship with the noise.\"</blockquote>"
+    "content": "<p>Mindfulness is often portrayed as sitting cross-legged on a mountain for hours. In reality, mindfulness is simply the practice of being present in whatever you are doing. For the busy professional, it\\'s about finding \"micro-moments\" of clarity throughout the day.</p><h3>The 3-Breath Rule</h3><p>Whenever you transition between tasks—getting out of your car, opening your laptop, or starting a meeting—take three deep breaths. This resets your nervous system and prevents the \"carry-over\" stress from one task to the next.</p><h3>Mindful Eating</h3><p>Try to eat at least one meal a day without a screen. Focus on the taste, texture, and smell of your food. This surprisingly simple practice can drastically improve your digestion and relationship with food.</p><blockquote>\"Mindfulness isn't about clearing your mind, but about changing your relationship with the noise.\"</blockquote>",
+    "views": 2840,
+    "likes": 190
   },
   {
     "id": 4,
@@ -84,7 +90,7 @@ export const postsData = [
     "id": 6,
     "slug": "street-photography-mastery",
     "tag": "Photography",
-    "tagColor": "bg-accent/10 text-indigo-700",
+    "tagColor": "bg-indigo-100 text-indigo-700",
     "title": "Street Photography: Capturing the Soul of the City",
     "excerpt": "Learn how to anticipate moments and capture the raw beauty of urban life through the lens of a street photographer.",
     "author": "Ethan Carter",
@@ -100,7 +106,7 @@ export const postsData = [
     "id": 7,
     "slug": "quantum-computing-fundamentals",
     "tag": "Technology",
-    "tagColor": "bg-secondary/10 text-blue-700",
+    "tagColor": "bg-blue-100 text-blue-700",
     "title": "Quantum Computing Fundamentals: Beyond the Hype",
     "excerpt": "Understand the core principles of quantum mechanics that are powering the next generation of supercomputers.",
     "author": "Marcus Thorne",
@@ -148,7 +154,7 @@ export const postsData = [
     "id": 10,
     "slug": "landscape-photography-tips",
     "tag": "Photography",
-    "tagColor": "bg-accent/10 text-indigo-700",
+    "tagColor": "bg-indigo-100 text-indigo-700",
     "title": "Landscape Photography: Mastering the Golden Hour",
     "excerpt": "Capture the magic of natural light. A deep dive into the timing, gear, and techniques for stunning outdoor shots.",
     "author": "Thomas Wright",
@@ -180,7 +186,7 @@ export const postsData = [
     "id": 12,
     "slug": "solo-backpacking-vietnam",
     "tag": "Travel",
-    "tagColor": "bg-primary/10 text-teal-700",
+    "tagColor": "bg-teal-100 text-teal-700",
     "title": "Solo Backpacking Through Vietnam: A 3-Week Itinerary",
     "excerpt": "From the bustling streets of Hanoi to the quiet hills of Sapa. A comprehensive guide for the independent traveler.",
     "author": "Chloe Evans",
@@ -196,7 +202,7 @@ export const postsData = [
     "id": 13,
     "slug": "web-security-essentials",
     "tag": "Technology",
-    "tagColor": "bg-secondary/10 text-blue-700",
+    "tagColor": "bg-blue-100 text-blue-700",
     "title": "Web Security Essentials for Modern Developers",
     "excerpt": "Don't leave your app vulnerable. Learn the top security practices to protect your users and data in 2024.",
     "author": "Alex Rivera",
@@ -212,7 +218,7 @@ export const postsData = [
     "id": 14,
     "slug": "culinary-tour-italy",
     "tag": "Travel",
-    "tagColor": "bg-primary/10 text-teal-700",
+    "tagColor": "bg-teal-100 text-teal-700",
     "title": "A Culinary Tour Through Italy: Beyond Pasta",
     "excerpt": "Each region of Italy tells a different story through its food. Explore the rich traditions of Italian cuisine.",
     "author": "Marco Rossi",
@@ -270,13 +276,13 @@ export const postsData = [
     "avatar": "https://i.pravatar.cc/150?u=isabella",
     "description": "Productivity in small bursts.",
     "bio": "Isabella is a productivity coach and systems analyst who has helped hundreds of students and professionals optimize their study and work habits.",
-    "content": "<p>The Pomodoro Technique is about working with time, not against it. By breaking your day into 25-minute sprints followed by short breaks, you maintain high levels of focus and mental energy.</p><h3>How It Works</h3><p>Pick a single task, set a timer for 25 minutes, and work with total focus until the bell rings. Then take a 5-minute break. After four 'pomodoros,' take a longer break. It's simple, yet incredibly effective.</p><h3>Avoiding the Trap of Multi-tasking</h3><p>The key to the Pomodoro is single-tasking. During those 25 minutes, no emails, no phones, no interruptions. This deep focus is where high-quality work happens.</p>"
+    "content": "<p>The Pomodoro Technique is about working with time, not against it. By breaking your day into 25-minute sprints followed by short breaks, you maintain high levels of focus and mental energy.</p><h3>How It Works</h3><p>Pick a single task, set a timer for 25 minutes, and work with total focus until the bell rings. Then take a 5-minute break. After four 'pomodoros,' take a longer break. It\\'s that simple, yet incredibly effective.</p><h3>Avoiding the Trap of Multi-tasking</h3><p>The key to the Pomodoro is single-tasking. During those 25 minutes, no emails, no phones, no interruptions. This deep focus is where high-quality work happens.</p>"
   },
   {
     "id": 18,
     "slug": "bird-photography-guide",
     "tag": "Photography",
-    "tagColor": "bg-accent/10 text-indigo-700",
+    "tagColor": "bg-indigo-100 text-indigo-700",
     "title": "Bird Photography: Patience and Precision",
     "excerpt": "Capturing these elusive creatures requires specialized gear and even more specialized patience. A beginner's guide.",
     "author": "Robert Fletcher",
@@ -292,7 +298,7 @@ export const postsData = [
     "id": 19,
     "slug": "augmented-reality-future",
     "tag": "Technology",
-    "tagColor": "bg-secondary/10 text-blue-700",
+    "tagColor": "bg-blue-100 text-blue-700",
     "title": "Augmented Reality: The Future of Interaction",
     "excerpt": "From gaming to surgery, AR is changing how we perceive and interact with the physical world.",
     "author": "Dr. Sophia Wei",
@@ -308,7 +314,7 @@ export const postsData = [
     "id": 20,
     "slug": "exploring-the-amazon-rainforest",
     "tag": "Travel",
-    "tagColor": "bg-primary/10 text-teal-700",
+    "tagColor": "bg-teal-100 text-teal-700",
     "title": "Exploring the Amazon Rainforest: An Eco-Traveler's Guide",
     "excerpt": "A deep dive into the lung of the Earth. Learn how to visit responsibly and see the world's most biodiverse environment.",
     "author": "Gabriel Silva",
@@ -323,12 +329,12 @@ export const postsData = [
 ];
 
 export const categoriesData = [
-  { "name": "Technology", "icon": "Cpu", "color": "bg-secondary/10 text-secondary", "count": "1.2k" },
-  { "name": "Travel", "icon": "Globe", "color": "bg-primary/10 text-primary", "count": "850" },
+  { "name": "Technology", "icon": "Cpu", "color": "bg-blue-50 text-blue-600", "count": "1.2k" },
+  { "name": "Travel", "icon": "Globe", "color": "bg-teal-50 text-teal-600", "count": "850" },
   { "name": "Lifestyle", "icon": "Coffee", "color": "bg-orange-50 text-orange-600", "count": "640" },
   { "name": "Health", "icon": "Heart", "color": "bg-rose-50 text-rose-600", "count": "920" },
   { "name": "Productivity", "icon": "Zap", "color": "bg-amber-50 text-amber-600", "count": "450" },
-  { "name": "Photography", "icon": "Camera", "color": "bg-accent/10 text-accent", "count": "310" }
+  { "name": "Photography", "icon": "Camera", "color": "bg-indigo-50 text-indigo-600", "count": "310" }
 ];
 
 export interface BlogPost {
@@ -346,6 +352,8 @@ export interface BlogPost {
   description: string;
   bio: string;
   content: string;
+  views?: number;
+  likes?: number;
 }
 
 export interface BlogCategory {
