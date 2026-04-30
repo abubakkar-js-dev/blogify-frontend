@@ -6,16 +6,15 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Logo from '@/components/Logo';
 import { 
-  Mail, 
-  Lock, 
-  User,
-  Github, 
-  Chrome, 
-  ArrowRight,
-  CheckCircle2,
-  Loader2,
-  ShieldCheck
-} from 'lucide-react';
+  LuMail, 
+  LuLock, 
+  LuUser,
+  LuArrowRight,
+  LuCircleCheckBig,
+  LuLoader,
+  LuShieldCheck
+} from 'react-icons/lu';
+import { FaGithub, FaGoogle } from 'react-icons/fa6';
 
 export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,10 +34,10 @@ export default function RegisterPage() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="w-full max-w-md text-center bg-white p-12 rounded-[3.5rem] shadow-2xl shadow-slate-200 border border-white"
+          className="w-full max-w-md text-center bg-white p-12 rounded-14 shadow-2xl shadow-slate-200 border border-white"
         >
-          <div className="w-24 h-24 bg-teal-50 text-teal-600 rounded-[2rem] flex items-center justify-center mb-8 mx-auto shadow-inner">
-            <CheckCircle2 className="w-12 h-12" />
+          <div className="w-24 h-24 bg-teal-50 text-teal-600 rounded-8 flex items-center justify-center mb-8 mx-auto shadow-inner">
+            <LuCircleCheckBig className="w-12 h-12" />
           </div>
           <h1 className="text-3xl font-black text-slate-900 mb-4">You're in!</h1>
           <p className="text-slate-500 mb-10 leading-relaxed font-medium">
@@ -46,7 +45,7 @@ export default function RegisterPage() {
           </p>
           <Link href="/login">
             <button className="w-full py-4 bg-teal-600 text-white rounded-2xl font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 shadow-xl shadow-teal-600/20 active:scale-[0.98]">
-              Proceed to Login <ArrowRight className="w-4 h-4" />
+              Proceed to Login <LuArrowRight className="w-4 h-4" />
             </button>
           </Link>
         </motion.div>
@@ -86,13 +85,13 @@ export default function RegisterPage() {
             <div className="space-y-6">
                <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400">
-                     <CheckCircle2 className="w-5 h-5" />
+                     <LuCircleCheckBig className="w-5 h-5" />
                   </div>
                   <p className="text-white font-bold">Free forever for basic authors</p>
                </div>
                <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400">
-                     <CheckCircle2 className="w-5 h-5" />
+                     <LuCircleCheckBig className="w-5 h-5" />
                   </div>
                   <p className="text-white font-bold">Advanced reach & SEO tools</p>
                </div>
@@ -122,12 +121,12 @@ export default function RegisterPage() {
                <div className="space-y-2">
                 <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Full Name</label>
                 <div className="relative group">
-                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
+                  <LuUser className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
                   <input 
                     type="text" 
                     required
                     placeholder="John Doe"
-                    className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                    className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-5 focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
                   />
                 </div>
               </div>
@@ -137,7 +136,7 @@ export default function RegisterPage() {
                   type="text" 
                   required
                   placeholder="johndoe123"
-                  className="w-full px-5 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                  className="w-full px-5 py-4 bg-slate-50 border-2 border-transparent rounded-5 focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
                 />
               </div>
             </div>
@@ -145,12 +144,12 @@ export default function RegisterPage() {
             <div className="space-y-2">
               <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Email Address</label>
               <div className="relative group">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
+                <LuMail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
                 <input 
                   type="email" 
                   required
                   placeholder="name@email.com"
-                  className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                  className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-5 focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
                 />
               </div>
             </div>
@@ -158,7 +157,7 @@ export default function RegisterPage() {
             <div className="space-y-2">
               <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Password</label>
               <div className="relative group">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
+                <LuLock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
                 <input 
                   type="password" 
                   required
@@ -167,7 +166,7 @@ export default function RegisterPage() {
                 />
               </div>
               <div className="flex items-center gap-2 mt-2 px-1">
-                 <ShieldCheck className="w-3 h-3 text-teal-600" />
+                 <LuShieldCheck className="w-3 h-3 text-teal-600" />
                  <span className="text-[10px] text-slate-500 font-medium tracking-tight">Secured with 256-bit encryption</span>
               </div>
             </div>
@@ -181,16 +180,16 @@ export default function RegisterPage() {
 
             <button 
               disabled={isLoading}
-              className="w-full py-4 bg-teal-600 text-white rounded-[1.25rem] font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-teal-600/20 disabled:opacity-50"
+              className="w-full py-4 bg-teal-600 text-white rounded-5 font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-teal-600/20 disabled:opacity-50"
             >
               {isLoading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
+                    <LuLoader className="w-4 h-4 animate-spin" />
                   Creating Account...
                 </>
               ) : (
                 <>
-                  Create Account <ArrowRight className="w-4 h-4" />
+                  Create Account <LuArrowRight className="w-4 h-4" />
                 </>
               )}
             </button>
@@ -205,11 +204,11 @@ export default function RegisterPage() {
 
           <div className="grid grid-cols-2 gap-4">
             <button className="flex items-center justify-center gap-2 py-3.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all shadow-sm">
-              <Chrome className="w-4 h-4" />
+              <FaGoogle className="w-4 h-4" />
               <span className="text-xs font-bold text-slate-700">Google</span>
             </button>
             <button className="flex items-center justify-center gap-2 py-3.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all shadow-sm">
-              <Github className="w-4 h-4" />
+              <FaGithub className="w-4 h-4" />
               <span className="text-xs font-bold text-slate-700">Github</span>
             </button>
           </div>

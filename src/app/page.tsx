@@ -1,88 +1,58 @@
 "use client";
 
+import Newsletter from "@/components/Newsletter";
+import {
+  LuArrowRight,
+  LuChartColumnIncreasing,
+  LuBookmark,
+  LuCamera,
+  LuChevronRight,
+  LuCoffee,
+  LuCpu,
+  LuGlobe,
+  LuHeart,
+  LuLayoutDashboard,
+  LuPenLine,
+  LuPlus,
+  LuTrendingUp,
+  LuType,
+  LuUsers,
+  LuZap,
+} from "react-icons/lu";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
-import {
-  ArrowRight,
-  PenLine,
-  Users,
-  BarChart3,
-  Bookmark,
-  Plus,
-  Globe,
-  Cpu,
-  Heart,
-  Zap,
-  Coffee,
-  Camera,
-  LayoutDashboard,
-  Type,
-  TrendingUp,
-  ChevronRight,
-} from "lucide-react";
-import Newsletter from "@/components/Newsletter";
 
 const stats = [
-  {
-    icon: <PenLine className="w-5 h-5 text-teal-600" />,
-    title: "Write effortlessly",
-    desc: "Beautiful editor for creators",
-    bg: "bg-teal-50",
-  },
-  {
-    icon: <Users className="w-5 h-5 text-blue-600" />,
-    title: "Grow your audience",
-    desc: "Built-in SEO and engagement tools",
-    bg: "bg-blue-50",
-  },
-  {
-    icon: <BarChart3 className="w-5 h-5 text-indigo-600" />,
-    title: "Track & improve",
-    desc: "Powerful analytics to keep growing",
-    bg: "bg-indigo-50",
-  },
+  { icon: <LuPenLine className="w-5 h-5 text-teal-600" />, title: "Write effortlessly", desc: "Beautiful editor for creators", bg: "bg-teal-50" },
+  { icon: <LuUsers className="w-5 h-5 text-blue-600" />, title: "Grow your audience", desc: "Built-in SEO and engagement tools", bg: "bg-blue-50" },
+  { icon: <LuChartColumnIncreasing className="w-5 h-5 text-indigo-600" />, title: "Track & improve", desc: "Powerful analytics to keep growing", bg: "bg-indigo-50" },
 ];
 
 import {
-  getAllPosts,
-  getAllCategories,
-  BlogPost,
   BlogCategory,
+  BlogPost,
+  getAllCategories,
+  getAllPosts,
 } from "@/lib/blog-data";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Icon Map for dynamic category icons
 const iconMap: Record<string, React.ReactNode> = {
-  Cpu: <Cpu className="w-5 h-5" />,
-  Globe: <Globe className="w-5 h-5" />,
-  Heart: <Heart className="w-5 h-5" />,
-  Zap: <Zap className="w-5 h-5" />,
-  Coffee: <Coffee className="w-5 h-5" />,
-  Camera: <Camera className="w-5 h-5" />,
+  Cpu: <LuCpu className="w-5 h-5" />,
+  Globe: <LuGlobe className="w-5 h-5" />,
+  Heart: <LuHeart className="w-5 h-5" />,
+  Zap: <LuZap className="w-5 h-5" />,
+  Coffee: <LuCoffee className="w-5 h-5" />,
+  Camera: <LuCamera className="w-5 h-5" />,
 };
 
 const brands = ["The Verge", "TechCrunch", "Wired", "Medium", "Substack"];
 
 const features = [
-  {
-    title: "Distraction-Free Editor",
-    desc: "Focus purely on your words with our clean, minimalist writing interface designed for absolute flow.",
-    icon: <Type className="w-6 h-6 text-white" />,
-    color: "bg-teal-500",
-  },
-  {
-    title: "Smart SEO Tools",
-    desc: "Built-in optimization that helps your stories reach the right readers on search engines automatically.",
-    icon: <TrendingUp className="w-6 h-6 text-white" />,
-    color: "bg-blue-500",
-  },
-  {
-    title: "Detailed Analytics",
-    desc: "Understand your audience with deep insights into who is reading and where they come from.",
-    icon: <LayoutDashboard className="w-6 h-6 text-white" />,
-    color: "bg-indigo-500",
-  },
+  { title: "Distraction-Free Editor", desc: "Focus purely on your words with our clean, minimalist writing interface designed for absolute flow.", icon: <LuType className="w-6 h-6 text-white" />, color: "bg-teal-500" },
+  { title: "Smart SEO Tools", desc: "Built-in optimization that helps your stories reach the right readers on search engines automatically.", icon: <LuTrendingUp className="w-6 h-6 text-white" />, color: "bg-blue-500" },
+  { title: "Detailed Analytics", desc: "Understand your audience with deep insights into who is reading and where they come from.", icon: <LuLayoutDashboard className="w-6 h-6 text-white" />, color: "bg-indigo-500" },
 ];
 
 export default function Home() {
@@ -112,9 +82,9 @@ export default function Home() {
     <main className="relative overflow-hidden">
       {/* Background Mesh Gradient */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[10%] w-125 h-125 bg-teal-500/10 rounded-full blur-[120px]" />
-        <div className="absolute top-[20%] left-[-10%] w-150 h-150 bg-blue-500/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[20%] right-[-5%] w-100 h-100 bg-indigo-500/10 rounded-full blur-[100px]" />
+        <div className="absolute top-[-10%] right-[10%] w-125 h-125 bg-teal-500/10 rounded-full blur-30" />
+        <div className="absolute top-[20%] left-[-10%] w-150 h-150 bg-blue-500/5 rounded-full blur-30" />
+        <div className="absolute bottom-[20%] right-[-5%] w-100 h-100 bg-indigo-500/10 rounded-full blur-25" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-24">
@@ -166,7 +136,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto">
               <Link href="/register" className="w-full sm:w-auto">
                 <button className="w-full px-8 py-4 bg-teal-600 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-teal-700 transition-all transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-teal-600/20">
-                  Start Writing <ArrowRight className="w-4 h-4" />
+                  Start Writing <LuArrowRight className="w-4 h-4" />
                 </button>
               </Link>
               <Link href="/blogs" className="w-full sm:w-auto">
@@ -210,10 +180,10 @@ export default function Home() {
             className="relative lg:mt-0 mt-20"
           >
             {/* Background Accent */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-500/5 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-500/5 rounded-full blur-25 -z-10" />
 
             <div className="relative group p-4 sm:p-6">
-              <div className="relative aspect-4/5 overflow-hidden rounded-[2.5rem] shadow-2xl border-white border-12 rotate-3 group-hover:rotate-0 transition-transform duration-700">
+              <div className="relative aspect-4/5 overflow-hidden rounded-10 shadow-2xl border-white border-12 rotate-3 group-hover:rotate-0 transition-transform duration-700">
                 <Image
                   src="https://picsum.photos/seed/adventure/1200/1600"
                   alt="Stories"
@@ -255,7 +225,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="absolute top-2 right-2 w-5 h-5 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center">
-                  <ArrowRight className="w-3 h-3 -rotate-45" />
+                  <LuArrowRight className="w-3 h-3 -rotate-45" />
                 </div>
               </motion.div>
 
@@ -290,7 +260,7 @@ export default function Home() {
                   </div>
                 </div>
                 <button className="w-8 h-8 sm:w-9 sm:h-9 bg-teal-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center hover:bg-teal-700 transition-all hover:scale-105 shrink-0">
-                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <LuPlus className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </motion.div>
             </div>
@@ -332,7 +302,7 @@ export default function Home() {
               className="text-xs font-bold text-teal-600 hover:underline flex items-center gap-1 group"
             >
               View all{" "}
-              <ChevronRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+              <LuChevronRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
@@ -384,7 +354,7 @@ export default function Home() {
             className="text-teal-600 font-semibold text-sm flex items-center gap-1 group"
           >
             View all posts{" "}
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <LuArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
@@ -448,7 +418,7 @@ export default function Home() {
                         </div>
                       </div>
                       <button className="p-2 text-slate-400 hover:text-teal-600 transition-colors">
-                        <Bookmark className="w-4 h-4" />
+                        <LuBookmark className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -459,8 +429,8 @@ export default function Home() {
 
       {/* Features Showcase */}
       <section className="bg-slate-950 py-32 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-125 h-125 bg-teal-500/10 rounded-full blur-[120px] z-0" />
-        <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-500/10 rounded-full blur-[120px] z-0" />
+        <div className="absolute top-0 right-0 w-125 h-125 bg-teal-500/10 rounded-full blur-30 z-0" />
+        <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-500/10 rounded-full blur-30 z-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center mb-16 md:mb-24">
           <span className="text-teal-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] mb-4 inline-block">
@@ -483,7 +453,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="group p-8 sm:p-10 bg-white/5 border border-white/10 rounded-[2.5rem] sm:rounded-[3rem] hover:bg-white/10 transition-all hover:border-white/20"
+              className="group p-8 sm:p-10 bg-white/5 border border-white/10 rounded-10 sm:rounded-12 hover:bg-white/10 transition-all hover:border-white/20"
             >
               <div
                 className={`w-14 h-14 sm:w-16 sm:h-16 ${feature.color} rounded-2xl flex items-center justify-center mb-8 sm:mb-10 shadow-2xl shadow-indigo-500/20 transition-transform group-hover:scale-110 group-hover:rotate-3`}

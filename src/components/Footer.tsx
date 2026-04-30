@@ -1,6 +1,6 @@
 'use client';
 
-// import { Twitter, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { FaXTwitter, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa6';
 import Link from 'next/link';
 import Logo from './Logo';
 
@@ -17,12 +17,12 @@ export default function Footer() {
             <p className="text-slate-500 text-base max-w-sm mb-10 leading-relaxed font-medium">
               Empowering the next generation of storytellers with a platform built for speed, beauty, and discovery.
             </p>
-            {/* <div className="flex gap-3">
+            <div className="flex gap-3">
               {[
-                { Icon: Twitter, label: 'Twitter' },
-                { Icon: Linkedin, label: 'LinkedIn' },
-                { Icon: Instagram, label: 'Instagram' },
-                { Icon: Facebook, label: 'Facebook' }
+                { Icon: FaXTwitter, label: 'Twitter' },
+                { Icon: FaLinkedinIn, label: 'LinkedIn' },
+                { Icon: FaInstagram, label: 'Instagram' },
+                { Icon: FaFacebookF, label: 'Facebook' }
               ].map(({ Icon, label }, i) => (
                 <button 
                   key={i} 
@@ -32,7 +32,7 @@ export default function Footer() {
                   <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
                 </button>
               ))}
-            </div> */}
+            </div>
           </div>
           
           <div className="col-span-1">

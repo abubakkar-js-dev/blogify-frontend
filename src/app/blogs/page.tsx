@@ -6,15 +6,15 @@ import Link from 'next/link';
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { 
-  Search, 
-  Calendar, 
-  Clock, 
-  ChevronRight, 
-  Filter,
-  Bookmark,
-  Share2,
-  X
-} from 'lucide-react';
+  LuSearch, 
+  LuCalendar, 
+  LuClock, 
+  LuChevronRight, 
+  LuFilter,
+  LuBookmark,
+  LuShare2,
+  LuX
+} from 'react-icons/lu';
 import Newsletter from '@/components/Newsletter';
 
 import { getAllPosts, getAllCategories, BlogPost, BlogCategory, postsData } from '@/lib/blog-data';
@@ -121,7 +121,7 @@ function BlogContent() {
           
           <div className="flex items-center gap-3">
              <div className="relative group">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500" />
+                <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500" />
                 <input 
                   type="text" 
                   value={searchQuery}
@@ -134,7 +134,7 @@ function BlogContent() {
                     onClick={() => setSearchQuery('')}
                     className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 hover:text-slate-600"
                   >
-                    <X className="w-3 h-3" />
+                    <LuX className="w-3 h-3" />
                   </button>
                 )}
              </div>
@@ -147,7 +147,7 @@ function BlogContent() {
                     : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >
-                   <Filter className="w-5 h-5" />
+                   <LuFilter className="w-5 h-5" />
                    {(sortBy !== 'newest' || readTimeFilter !== 'all') && (
                      <span className="absolute -top-1 -right-1 w-2 h-2 bg-teal-500 rounded-full border-2 border-white" />
                    )}
@@ -172,7 +172,7 @@ function BlogContent() {
                           ].map(opt => (
                             <button
                               key={opt.id}
-                              onClick={() => setSortBy(opt.id as any)}
+                              onClick={() => setSortBy(opt.id as 'newest' | 'oldest')}
                               className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                                 sortBy === opt.id 
                                 ? 'bg-teal-600 text-white' 
@@ -198,7 +198,7 @@ function BlogContent() {
                           ].map(opt => (
                             <button
                               key={opt.id}
-                              onClick={() => setReadTimeFilter(opt.id as any)}
+                              onClick={() => setReadTimeFilter(opt.id as 'all' | 'short' | 'medium' | 'long')}
                               className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                                 readTimeFilter === opt.id 
                                 ? 'bg-teal-600 text-white' 
@@ -215,7 +215,7 @@ function BlogContent() {
                         onClick={() => { setSortBy('newest'); setReadTimeFilter('all'); setSelectedCategory('All'); setSearchQuery(''); }}
                         className="w-full py-2 flex items-center justify-center gap-2 text-xs font-bold text-slate-400 hover:text-rose-500 transition-colors"
                       >
-                         <X className="w-3 h-3" /> Reset all
+                         <LuX className="w-3 h-3" /> Reset all
                       </button>
                     </motion.div>
                   )}
@@ -261,7 +261,7 @@ function BlogContent() {
             className="text-center py-24 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200"
           >
             <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
-               <Search className="w-8 h-8 text-slate-400" />
+               <LuSearch className="w-8 h-8 text-slate-400" />
             </div>
             <h3 className="text-2xl font-bold mb-2">No articles found</h3>
             <p className="text-slate-500 mb-8">Try adjusting your search or category filters.</p>
@@ -318,7 +318,7 @@ function BlogContent() {
                           alt={featuredPost.author} 
                           width={32}
                           height={32}
-                          className="rounded-full border-2 border-white/20 sm:w-[40px] sm:h-[40px]"
+                          className="rounded-full border-2 border-white/20 sm:w-10 sm:h-10"
                         />
                         <div className="text-white">
                           <p className="text-xs sm:text-sm font-bold">{featuredPost.author}</p>
@@ -327,7 +327,7 @@ function BlogContent() {
                      </div>
                      <Link href={`/blogs/${featuredPost.slug}`}>
                         <button className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-white text-slate-900 rounded-xl font-bold text-xs sm:text-sm hover:bg-teal-50 transition-all flex items-center justify-center gap-2 group/btn">
-                          Read Article <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                          Read Article <LuChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                         </button>
                      </Link>
                   </div>
@@ -345,7 +345,7 @@ function BlogContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group flex flex-col h-full bg-white border border-slate-100 rounded-[2rem] overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all"
+                  className="group flex flex-col h-full bg-white border border-slate-100 rounded-8 overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all"
                 >
                   <Link href={`/blogs/${post.slug}`} className="relative aspect-[4/3] block overflow-hidden">
                     <Image 
@@ -360,7 +360,7 @@ function BlogContent() {
                     </div>
                     <div className="absolute top-4 right-4 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
                        <button className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-600 hover:text-teal-600">
-                          <Bookmark className="w-4 h-4" />
+                          <LuBookmark className="w-4 h-4" />
                        </button>
                     </div>
                   </Link>
@@ -368,12 +368,12 @@ function BlogContent() {
                   <div className="p-8 flex flex-col flex-1">
                     <div className="flex items-center gap-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">
                       <div className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
+                        <LuCalendar className="w-3 h-3" />
                         {post.date}
                       </div>
                       <span className="w-1 h-1 bg-slate-300 rounded-full" />
                       <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
+                        <LuClock className="w-3 h-3" />
                         {post.readTime}
                       </div>
                     </div>
@@ -403,7 +403,7 @@ function BlogContent() {
                         </div>
                       </div>
                       <button className="p-2 text-slate-400 hover:text-teal-600 transition-colors">
-                        <Share2 className="w-4 h-4" />
+                        <LuShare2 className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -429,10 +429,10 @@ function BlogContent() {
                : 'bg-white border border-slate-100 text-slate-600 hover:border-teal-500 hover:text-teal-600 hover:shadow-lg hover:shadow-teal-500/10'
              }`}
            >
-              <ChevronRight className="w-5 h-5 rotate-180" />
+              <LuChevronRight className="w-5 h-5 rotate-180" />
            </button>
            
-           <div className="flex items-center gap-2 bg-slate-50 p-1.5 rounded-[1.5rem] border border-slate-100 shadow-inner">
+           <div className="flex items-center gap-2 bg-slate-50 p-1.5 rounded-6 border border-slate-100 shadow-inner">
              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                 <button 
                   key={page} 
@@ -470,7 +470,7 @@ function BlogContent() {
                : 'bg-white border border-slate-100 text-slate-600 hover:border-teal-500 hover:text-teal-600 hover:shadow-lg hover:shadow-teal-500/10'
              }`}
            >
-              <ChevronRight className="w-5 h-5" />
+              <LuChevronRight className="w-5 h-5" />
            </button>
         </div>
       )}

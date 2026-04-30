@@ -2,70 +2,70 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Zap, 
-  Shield, 
-  Smartphone, 
-  Globe, 
-  Share2, 
-  MessageSquare,
-  PenTool,
-  BarChart,
-  Layout,
-  Search
-} from 'lucide-react';
+  LuZap, 
+  LuShield, 
+  LuSmartphone, 
+  LuGlobe, 
+  LuShare2, 
+  LuMessageSquare,
+  LuPenTool,
+  LuChartColumn,
+  LuLayoutGrid,
+  LuSearch
+} from 'react-icons/lu';
 import Newsletter from '@/components/Newsletter';
 
 const features = [
   {
-    icon: <PenTool className="w-6 h-6 text-teal-600" />,
+    icon: <LuPenTool className="w-6 h-6 text-teal-600" />,
     title: 'Modern Editor',
     description: 'A distraction-free writing experience with rich media support and auto-save.',
     bg: 'bg-teal-50'
   },
   {
-    icon: <BarChart className="w-6 h-6 text-blue-600" />,
+    icon: <LuChartColumn className="w-6 h-6 text-blue-600" />,
     title: 'Advanced Analytics',
     description: 'Deep insights into your readers, where they come from, and what they like.',
     bg: 'bg-blue-50'
   },
   {
-    icon: <Layout className="w-6 h-6 text-indigo-600" />,
+    icon: <LuLayoutGrid className="w-6 h-6 text-indigo-600" />,
     title: 'Custom Themes',
     description: 'Choose from a variety of beautiful layouts or build your own with our API.',
     bg: 'bg-indigo-50'
   },
   {
-    icon: <Search className="w-6 h-6 text-orange-600" />,
+    icon: <LuSearch className="w-6 h-6 text-orange-600" />,
     title: 'SEO Optimized',
     description: 'Built-in tools to help your content rank higher on search engines.',
     bg: 'bg-orange-50'
   },
   {
-    icon: <Zap className="w-6 h-6 text-yellow-600" />,
+    icon: <LuZap className="w-6 h-6 text-yellow-600" />,
     title: 'Blazing Fast',
     description: 'Global CDN ensures your blog loads instantly for anyone, anywhere.',
     bg: 'bg-yellow-50'
   },
   {
-    icon: <Shield className="w-6 h-6 text-red-600" />,
+    icon: <LuShield className="w-6 h-6 text-red-600" />,
     title: 'Privacy First',
     description: 'You own your data. Secure backups and enterprise-grade encryption.',
     bg: 'bg-red-50'
   },
   {
-    icon: <Smartphone className="w-6 h-6 text-green-600" />,
+    icon: <LuSmartphone className="w-6 h-6 text-green-600" />,
     title: 'Responsive Design',
     description: 'Looks perfect on mobile, tablets, and desktops out of the box.',
     bg: 'bg-green-50'
   },
   {
-    icon: <Globe className="w-6 h-6 text-purple-600" />,
+    icon: <LuGlobe className="w-6 h-6 text-purple-600" />,
     title: 'Custom Domains',
     description: 'Connect your own domain to maintain your brand consistency.',
     bg: 'bg-purple-50'
   },
   {
-    icon: <Share2 className="w-6 h-6 text-pink-600" />,
+    icon: <LuShare2 className="w-6 h-6 text-pink-600" />,
     title: 'Social Integration',
     description: 'Share your stories automatically with one-click social connectors.',
     bg: 'bg-pink-50'
@@ -101,7 +101,7 @@ export default function FeaturesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="p-8 bg-white border border-slate-100 rounded-[2rem] hover:shadow-xl hover:shadow-teal-900/5 transition-all group"
+            className="p-8 bg-white border border-slate-100 rounded-8 hover:shadow-xl hover:shadow-teal-900/5 transition-all group"
           >
             <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
               {feature.icon}
@@ -119,7 +119,7 @@ export default function FeaturesPage() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="mt-32 p-12 bg-teal-600 rounded-[3rem] relative overflow-hidden text-center"
+        className="mt-32 p-12 bg-teal-600 rounded-12 relative overflow-hidden text-center"
       >
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
         <div className="relative z-10 max-w-2xl mx-auto">

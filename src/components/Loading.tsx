@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Loading() {
   return (
-    <div className="min-h-[400px] w-full flex flex-col items-center justify-center p-8">
+    <div className="min-h-100 w-full flex flex-col items-center justify-center p-8">
       <div className="relative w-20 h-20">
         {/* Outer Ring */}
         <motion.div
@@ -24,7 +24,7 @@ export default function Loading() {
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 1, repeat: Infinity }}
-          className="absolute inset-[34px] bg-teal-600 rounded-full shadow-lg shadow-teal-500/50"
+          className="absolute inset-8.5 bg-teal-600 rounded-full shadow-lg shadow-teal-500/50"
         />
       </div>
       

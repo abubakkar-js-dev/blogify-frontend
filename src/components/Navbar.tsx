@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, User, X, Menu } from "lucide-react";
+import { LuSearch, LuUser, LuX, LuMenu } from "react-icons/lu";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
@@ -69,7 +69,7 @@ export default function Navbar() {
             onSubmit={handleSearch}
             className="relative hidden xl:block group"
           >
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 group-focus-within:text-teal-600 group-focus-within:scale-110 transition-all" />
+            <LuSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 group-focus-within:text-teal-600 group-focus-within:scale-110 transition-all" />
             <input
               type="text"
               value={searchValue}
@@ -84,7 +84,7 @@ export default function Navbar() {
               href="/login"
               className="hidden sm:flex items-center justify-center w-10 h-10 border border-slate-200 hover:border-slate-900 rounded-xl transition-all hover:bg-slate-900 hover:text-white group"
             >
-              <User className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
+              <LuUser className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
             </Link>
             <Link href="/register">
               <button className="h-10 px-4 sm:px-6 bg-slate-900 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-teal-600 transition-all transform hover:scale-[1.03] active:scale-95 shadow-xl shadow-slate-900/10 active:shadow-none whitespace-nowrap">
@@ -99,9 +99,9 @@ export default function Navbar() {
             aria-label="Toggle Menu"
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6" />
+              <LuX className="w-6 h-6" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <LuMenu className="w-6 h-6" />
             )}
           </button>
         </div>
@@ -118,7 +118,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-6">
               <form onSubmit={handleSearch} className="relative group mb-4">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                <LuSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <input
                   type="text"
                   value={searchValue}
@@ -149,7 +149,7 @@ export default function Navbar() {
                   href="/login"
                   className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-teal-600 transition-colors"
                 >
-                  <User className="w-5 h-5" /> Account Login
+                  <LuUser className="w-5 h-5" /> Account Login
                 </Link>
                 <p className="text-[9px] font-bold text-slate-300 uppercase tracking-widest">
                   © 2024 Blogify
