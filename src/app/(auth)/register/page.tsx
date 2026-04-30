@@ -126,7 +126,7 @@ export default function RegisterPage() {
                     type="text" 
                     required
                     placeholder="John Doe"
-                    className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-5 focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                    className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
                   />
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function RegisterPage() {
                   type="text" 
                   required
                   placeholder="johndoe123"
-                  className="w-full px-5 py-4 bg-slate-50 border-2 border-transparent rounded-5 focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                  className="w-full px-5 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
                 />
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function RegisterPage() {
 
             <button 
               disabled={isLoading}
-              className="w-full py-4 bg-teal-600 text-white rounded-5 font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-teal-600/20 disabled:opacity-50"
+              className="w-full py-4 bg-teal-600 text-white rounded-[1.25rem] font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-teal-600/20 disabled:opacity-50"
             >
               {isLoading ? (
                 <>

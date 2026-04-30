@@ -318,7 +318,7 @@ function BlogContent() {
                           alt={featuredPost.author} 
                           width={32}
                           height={32}
-                          className="rounded-full border-2 border-white/20 sm:w-10 sm:h-10"
+                          className="rounded-full border-2 border-white/20 sm:w-[40px] sm:h-[40px]"
                         />
                         <div className="text-white">
                           <p className="text-xs sm:text-sm font-bold">{featuredPost.author}</p>
@@ -345,7 +345,7 @@ function BlogContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group flex flex-col h-full bg-white border border-slate-100 rounded-8 overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all"
+                  className="group flex flex-col h-full bg-white border border-slate-100 rounded-[2rem] overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all"
                 >
                   <Link href={`/blogs/${post.slug}`} className="relative aspect-[4/3] block overflow-hidden">
                     <Image 
@@ -432,7 +432,7 @@ function BlogContent() {
               <LuChevronRight className="w-5 h-5 rotate-180" />
            </button>
            
-           <div className="flex items-center gap-2 bg-slate-50 p-1.5 rounded-6 border border-slate-100 shadow-inner">
+           <div className="flex items-center gap-2 bg-slate-50 p-1.5 rounded-[1.5rem] border border-slate-100 shadow-inner">
              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                 <button 
                   key={page} 

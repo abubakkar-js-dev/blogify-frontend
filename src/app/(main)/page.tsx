@@ -82,9 +82,9 @@ export default function Home() {
     <main className="relative overflow-hidden">
       {/* Background Mesh Gradient */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[10%] w-125 h-125 bg-teal-500/10 rounded-full blur-30" />
-        <div className="absolute top-[20%] left-[-10%] w-150 h-150 bg-blue-500/5 rounded-full blur-30" />
-        <div className="absolute bottom-[20%] right-[-5%] w-100 h-100 bg-indigo-500/10 rounded-full blur-25" />
+        <div className="absolute top-[-10%] right-[10%] w-125 h-125 bg-teal-500/10 rounded-full blur-[120px]" />
+        <div className="absolute top-[20%] left-[-10%] w-150 h-150 bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[20%] right-[-5%] w-100 h-100 bg-indigo-500/10 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-24">
@@ -180,10 +180,10 @@ export default function Home() {
             className="relative lg:mt-0 mt-20"
           >
             {/* Background Accent */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-500/5 rounded-full blur-25 -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-500/5 rounded-full blur-[100px] -z-10" />
 
             <div className="relative group p-4 sm:p-6">
-              <div className="relative aspect-4/5 overflow-hidden rounded-10 shadow-2xl border-white border-12 rotate-3 group-hover:rotate-0 transition-transform duration-700">
+              <div className="relative aspect-4/5 overflow-hidden rounded-[2.5rem] shadow-2xl border-white border-12 rotate-3 group-hover:rotate-0 transition-transform duration-700">
                 <Image
                   src="https://picsum.photos/seed/adventure/1200/1600"
                   alt="Stories"
@@ -429,8 +429,8 @@ export default function Home() {
 
       {/* Features Showcase */}
       <section className="bg-slate-950 py-32 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-125 h-125 bg-teal-500/10 rounded-full blur-30 z-0" />
-        <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-500/10 rounded-full blur-30 z-0" />
+        <div className="absolute top-0 right-0 w-125 h-125 bg-teal-500/10 rounded-full blur-[120px] z-0" />
+        <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-500/10 rounded-full blur-[120px] z-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center mb-16 md:mb-24">
           <span className="text-teal-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] mb-4 inline-block">
@@ -453,7 +453,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="group p-8 sm:p-10 bg-white/5 border border-white/10 rounded-10 sm:rounded-12 hover:bg-white/10 transition-all hover:border-white/20"
+              className="group p-8 sm:p-10 bg-white/5 border border-white/10 rounded-[2.5rem] sm:rounded-[3rem] hover:bg-white/10 transition-all hover:border-white/20"
             >
               <div
                 className={`w-14 h-14 sm:w-16 sm:h-16 ${feature.color} rounded-2xl flex items-center justify-center mb-8 sm:mb-10 shadow-2xl shadow-indigo-500/20 transition-transform group-hover:scale-110 group-hover:rotate-3`}

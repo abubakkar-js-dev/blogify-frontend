@@ -7,7 +7,6 @@ import {
   LuSmartphone, 
   LuGlobe, 
   LuShare2, 
-  LuMessageSquare,
   LuPenTool,
   LuChartColumn,
   LuLayoutGrid,
@@ -87,7 +86,7 @@ export default function FeaturesPage() {
             Everything you need to <span className="text-teal-500">tell your story.</span>
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            We've built the ultimate platform for creators. Focus on your ideas while we handle the technical magic.
+            We&apos;ve built the ultimate platform for creators. Focus on your ideas while we handle the technical magic.
           </p>
         </motion.div>
       </div>
@@ -101,7 +100,7 @@ export default function FeaturesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="p-8 bg-white border border-slate-100 rounded-8 hover:shadow-xl hover:shadow-teal-900/5 transition-all group"
+            className="p-8 bg-white border border-slate-100 rounded-4xl hover:shadow-xl hover:shadow-teal-900/5 transition-all group"
           >
             <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
               {feature.icon}
@@ -119,7 +118,7 @@ export default function FeaturesPage() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="mt-32 p-12 bg-teal-600 rounded-12 relative overflow-hidden text-center"
+        className="mt-32 p-12 bg-teal-600 rounded-[3rem] relative overflow-hidden text-center"
       >
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
         <div className="relative z-10 max-w-2xl mx-auto">

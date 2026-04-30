@@ -208,7 +208,7 @@ export default function BlogPostPage() {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-16/10 rounded-12 overflow-hidden mb-16 shadow-2xl border-white border-8"
+              className="relative aspect-16/10 rounded-[3rem] overflow-hidden mb-16 shadow-2xl border-white border-8"
             >
               <Image
                 src={post.image}
@@ -241,7 +241,7 @@ export default function BlogPostPage() {
             </div>
 
             {/* Author Card Footer */}
-            <div className="mt-20 p-8 md:p-12 bg-slate-950 rounded-4xl md:rounded-12 text-white relative overflow-hidden group">
+            <div className="mt-20 p-8 md:p-12 bg-slate-950 rounded-4xl md:rounded-[3rem] text-white relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10 flex flex-col md:flex-row gap-10 items-center">
                 <div className="relative w-32 h-32 shrink-0 group-hover:scale-110 transition-transform duration-500">
@@ -298,7 +298,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 rounded-10 p-4 mb-12">
+              <div className="bg-slate-50 rounded-[2.5rem] p-4 mb-12">
                 <div className="bg-white rounded-4xl p-6 shadow-sm">
                   <textarea
                     placeholder="What are your thoughts on this story?"
@@ -365,7 +365,7 @@ export default function BlogPostPage() {
           <aside className="lg:col-span-4 hidden lg:block">
             <div className="sticky top-28 space-y-12">
               {/* Newsletter Widget */}
-              <div className="bg-teal-600 rounded-10 p-8 text-white relative overflow-hidden group shadow-2xl shadow-teal-600/20">
+              <div className="bg-teal-600 rounded-[2.5rem] p-8 text-white relative overflow-hidden group shadow-2xl shadow-teal-600/20">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                 <h3 className="text-2xl font-black mb-4 relative z-10">
                   Get the best of Blogify
@@ -484,7 +484,7 @@ export default function BlogPostPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="group bg-white rounded-10 overflow-hidden border border-slate-100 hover:shadow-2xl transition-all h-full flex flex-col shadow-sm"
+                className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 hover:shadow-2xl transition-all h-full flex flex-col shadow-sm"
               >
                 <Link
                   href={`/blogs/${sp.slug}`}

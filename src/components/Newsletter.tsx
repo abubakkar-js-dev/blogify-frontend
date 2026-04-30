@@ -28,7 +28,7 @@ export default function Newsletter() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-slate-900 rounded-10 p-8 md:p-12 lg:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12"
+        className="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 lg:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12"
       >
         {/* Background circles */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2" />
@@ -54,7 +54,7 @@ export default function Newsletter() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="flex items-center gap-4 bg-teal-500/10 text-teal-400 p-8 rounded-8 border border-teal-500/20 backdrop-blur-xl"
+                className="flex items-center gap-4 bg-teal-500/10 text-teal-400 p-8 rounded-[2rem] border border-teal-500/20 backdrop-blur-xl"
               >
                 <div className="w-12 h-12 bg-teal-500 text-slate-950 rounded-full flex items-center justify-center shrink-0">
                   <LuCircleCheckBig className="w-6 h-6" />
@@ -71,7 +71,7 @@ export default function Newsletter() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onSubmit={handleSubmit}
-                className="flex flex-col sm:flex-row gap-3 p-2 bg-white/5 backdrop-blur-md rounded-8 border border-white/10 w-full"
+                className="flex flex-col sm:flex-row gap-3 p-2 bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 w-full"
               >
                 <input 
                   type="email" 
@@ -83,7 +83,7 @@ export default function Newsletter() {
                 />
                 <button 
                   disabled={status === 'loading'}
-                  className="px-8 py-4 bg-teal-600 text-white rounded-6 font-black text-xs uppercase tracking-widest hover:bg-teal-500 transition-all transform active:scale-95 whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-50 shadow-xl shadow-teal-600/20"
+                  className="px-8 py-4 bg-teal-600 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-widest hover:bg-teal-500 transition-all transform active:scale-95 whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-50 shadow-xl shadow-teal-600/20"
                 >
                   {status === 'loading' ? (
                     <>
