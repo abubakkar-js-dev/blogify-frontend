@@ -1,10 +1,10 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LuSearch, LuUser, LuX, LuMenu } from "react-icons/lu";
-import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { LuMenu, LuSearch, LuUser, LuX } from "react-icons/lu";
 import Logo from "./Logo";
 
 const navLinks = [
@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-3xl border-b border-slate-200/40 px-4 sm:px-6 py-4 transition-all duration-300">
-      <div className="max-w-360 mx-auto flex items-center justify-between gap-4">
+      <div className="max-w-360 mx-auto flex items-center justify-between gap-4 md:gap-8 lg:gap-12">
         <Logo />
 
         <div className="hidden lg:flex items-center gap-8">

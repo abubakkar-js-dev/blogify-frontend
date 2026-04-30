@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useState } from 'react';
-import Image from 'next/image';
-import Logo from '@/components/Logo';
-import { 
-  LuMail, 
-  LuLock, 
-  LuUser,
+import Logo from "@/components/Logo";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { FaGithub, FaGoogle } from "react-icons/fa6";
+import {
   LuArrowRight,
   LuCircleCheckBig,
   LuLoader,
-  LuShieldCheck
-} from 'react-icons/lu';
-import { FaGithub, FaGoogle } from 'react-icons/fa6';
+  LuLock,
+  LuMail,
+  LuShieldCheck,
+  LuUser,
+} from "react-icons/lu";
 
 export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +23,7 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsLoading(false);
     setIsSuccess(true);
   };
@@ -31,7 +31,7 @@ export default function RegisterPage() {
   if (isSuccess) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-slate-50 px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="w-full max-w-md text-center bg-white p-12 rounded-14 shadow-2xl shadow-slate-200 border border-white"
@@ -39,9 +39,12 @@ export default function RegisterPage() {
           <div className="w-24 h-24 bg-teal-50 text-teal-600 rounded-8 flex items-center justify-center mb-8 mx-auto shadow-inner">
             <LuCircleCheckBig className="w-12 h-12" />
           </div>
-          <h1 className="text-3xl font-black text-slate-900 mb-4">You're in!</h1>
+          <h1 className="text-3xl font-black text-slate-900 mb-4">
+            You&apos;re in!
+          </h1>
           <p className="text-slate-500 mb-10 leading-relaxed font-medium">
-            Welcome to the Blogify creator community. We've sent a verification link to your email to get you started.
+            Welcome to the Blogify creator community. We&apos;ve sent a
+            verification link to your email to get you started.
           </p>
           <Link href="/login">
             <button className="w-full py-4 bg-teal-600 text-white rounded-2xl font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 shadow-xl shadow-teal-600/20 active:scale-[0.98]">
@@ -58,16 +61,16 @@ export default function RegisterPage() {
       {/* Left side: Hero */}
       <div className="hidden lg:flex relative bg-slate-900 items-center justify-center p-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
+          <Image
             src="https://picsum.photos/seed/creative-office/1200/1600"
             alt="Creator Space"
             fill
             className="object-cover opacity-60 transition-transform duration-[12s] hover:scale-110"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-teal-600/90 via-slate-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-tr from-teal-600/90 via-slate-900/80 to-transparent" />
         </div>
-        
+
         <div className="relative z-10 max-w-lg">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -79,22 +82,27 @@ export default function RegisterPage() {
               Unleash your inner storyteller today.
             </h2>
             <p className="text-slate-200 text-lg mb-12 leading-relaxed font-medium">
-              Join a global network of thinkers, writers, and curious minds. Your first article is just a few clicks away.
+              Join a global network of thinkers, writers, and curious minds.
+              Your first article is just a few clicks away.
             </p>
-            
+
             <div className="space-y-6">
-               <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400">
-                     <LuCircleCheckBig className="w-5 h-5" />
-                  </div>
-                  <p className="text-white font-bold">Free forever for basic authors</p>
-               </div>
-               <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400">
-                     <LuCircleCheckBig className="w-5 h-5" />
-                  </div>
-                  <p className="text-white font-bold">Advanced reach & SEO tools</p>
-               </div>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400">
+                  <LuCircleCheckBig className="w-5 h-5" />
+                </div>
+                <p className="text-white font-bold">
+                  Free forever for basic authors
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400">
+                  <LuCircleCheckBig className="w-5 h-5" />
+                </div>
+                <p className="text-white font-bold">
+                  Advanced reach & SEO tools
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -102,7 +110,7 @@ export default function RegisterPage() {
 
       {/* Right side: Form */}
       <div className="flex items-center justify-center p-8 md:p-16 lg:p-24 bg-white relative overflow-y-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           className="w-full max-w-xl"
@@ -112,18 +120,24 @@ export default function RegisterPage() {
           </div>
 
           <div className="mb-10 text-center lg:text-left">
-            <h1 className="text-3xl font-black text-slate-900 mb-2">Create Account</h1>
-            <p className="text-slate-500">Get started with your free creator account.</p>
+            <h1 className="text-3xl font-black text-slate-900 mb-2">
+              Create Account
+            </h1>
+            <p className="text-slate-500">
+              Get started with your free creator account.
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
-               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Full Name</label>
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">
+                  Full Name
+                </label>
                 <div className="relative group">
                   <LuUser className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     required
                     placeholder="John Doe"
                     className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
@@ -131,9 +145,11 @@ export default function RegisterPage() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Username</label>
-                <input 
-                  type="text" 
+                <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">
+                  Username
+                </label>
+                <input
+                  type="text"
                   required
                   placeholder="johndoe123"
                   className="w-full px-5 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
@@ -142,11 +158,13 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Email Address</label>
+              <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">
+                Email Address
+              </label>
               <div className="relative group">
                 <LuMail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   required
                   placeholder="name@email.com"
                   className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-5 focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
@@ -155,36 +173,58 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">Password</label>
+              <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">
+                Password
+              </label>
               <div className="relative group">
                 <LuLock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
-                <input 
-                  type="password" 
+                <input
+                  type="password"
                   required
                   placeholder="Create a strong password"
                   className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
                 />
               </div>
               <div className="flex items-center gap-2 mt-2 px-1">
-                 <LuShieldCheck className="w-3 h-3 text-teal-600" />
-                 <span className="text-[10px] text-slate-500 font-medium tracking-tight">Secured with 256-bit encryption</span>
+                <LuShieldCheck className="w-3 h-3 text-teal-600" />
+                <span className="text-[10px] text-slate-500 font-medium tracking-tight">
+                  Secured with 256-bit encryption
+                </span>
               </div>
             </div>
 
             <div className="flex items-start gap-3 px-1">
-               <input type="checkbox" required className="mt-1 w-4 h-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500/20" />
-               <p className="text-xs text-slate-500 leading-tight">
-                  I agree to Blogify's <Link href="#" className="font-bold text-slate-900 hover:underline underline-offset-4">Terms of Service</Link> and <Link href="#" className="font-bold text-slate-900 hover:underline underline-offset-4">Privacy Policy</Link>.
-               </p>
+              <input
+                type="checkbox"
+                required
+                className="mt-1 w-4 h-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500/20"
+              />
+              <p className="text-xs text-slate-500 leading-tight">
+                I agree to Blogify&apos;s{" "}
+                <Link
+                  href="#"
+                  className="font-bold text-slate-900 hover:underline underline-offset-4"
+                >
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="#"
+                  className="font-bold text-slate-900 hover:underline underline-offset-4"
+                >
+                  Privacy Policy
+                </Link>
+                .
+              </p>
             </div>
 
-            <button 
+            <button
               disabled={isLoading}
               className="w-full py-4 bg-teal-600 text-white rounded-[1.25rem] font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-teal-600/20 disabled:opacity-50"
             >
               {isLoading ? (
                 <>
-                    <LuLoader className="w-4 h-4 animate-spin" />
+                  <LuLoader className="w-4 h-4 animate-spin" />
                   Creating Account...
                 </>
               ) : (
@@ -199,7 +239,9 @@ export default function RegisterPage() {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-slate-100" />
             </div>
-            <span className="relative px-4 bg-white text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sign up with provider</span>
+            <span className="relative px-4 bg-white text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+              Sign up with provider
+            </span>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -214,8 +256,11 @@ export default function RegisterPage() {
           </div>
 
           <p className="text-center mt-12 text-sm text-slate-500 font-medium">
-            Already have an account? {' '}
-            <Link href="/login" className="text-teal-600 font-bold hover:underline underline-offset-4 decoration-2 decoration-teal-500/30">
+            Already have an account?{" "}
+            <Link
+              href="/login"
+              className="text-teal-600 font-bold hover:underline underline-offset-4 decoration-2 decoration-teal-500/30"
+            >
               Sign In here
             </Link>
           </p>
