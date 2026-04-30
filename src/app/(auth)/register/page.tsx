@@ -65,6 +65,7 @@ export default function RegisterPage() {
             src="https://picsum.photos/seed/creative-office/1200/1600"
             alt="Creator Space"
             fill
+            priority
             className="object-cover opacity-60 transition-transform duration-[12s] hover:scale-110"
             referrerPolicy="no-referrer"
           />
@@ -167,7 +168,7 @@ export default function RegisterPage() {
                   type="email"
                   required
                   placeholder="name@email.com"
-                  className="w-full pl-11 pr-4 py-4 bg-muted border-2 border-transparent rounded-5 focus:bg-background focus:border-primary/20 focus:ring-4 focus:ring-primary/5 transition-all outline-none text-sm"
+                  className="w-full pl-11 pr-4 py-4 bg-muted border-2 border-transparent rounded-[1.25rem] focus:bg-background focus:border-primary/20 focus:ring-4 focus:ring-primary/5 transition-all outline-none text-sm"
                 />
               </div>
             </div>
@@ -195,11 +196,12 @@ export default function RegisterPage() {
 
             <div className="flex items-start gap-3 px-1">
               <input
+                id="terms"
                 type="checkbox"
                 required
                 className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary/20"
               />
-              <p className="text-xs text-muted-foreground leading-tight">
+              <label htmlFor="terms" className="text-xs text-muted-foreground leading-tight cursor-pointer">
                 I agree to Blogify&apos;s{" "}
                 <Link
                   href="#"
@@ -215,7 +217,7 @@ export default function RegisterPage() {
                   Privacy Policy
                 </Link>
                 .
-              </p>
+              </label>
             </div>
 
             <button

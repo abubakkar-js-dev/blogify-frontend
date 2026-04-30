@@ -218,6 +218,7 @@ export default function Home() {
                   src="https://picsum.photos/seed/adventure/1200/1600"
                   alt="Stories"
                   fill
+                  priority
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />

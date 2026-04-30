@@ -35,6 +35,7 @@ export default function LoginPage() {
             src="https://picsum.photos/seed/writing-desk/1200/1600"
             alt="Hero"
             fill
+            priority
             className="object-cover opacity-50 transition-transform duration-[10s] hover:scale-110"
             referrerPolicy="no-referrer"
           />
@@ -156,12 +157,13 @@ export default function LoginPage() {
 
             <div className="flex items-center gap-3 px-1">
               <input
+                id="remember"
                 type="checkbox"
                 className="w-4 h-4 rounded border-border text-primary focus:ring-primary/20"
               />
-              <span className="text-xs text-muted-foreground font-medium">
+              <label htmlFor="remember" className="text-xs text-muted-foreground font-medium cursor-pointer">
                 Keep me signed in for 30 days
-              </span>
+              </label>
             </div>
 
             <button

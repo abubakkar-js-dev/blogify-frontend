@@ -214,6 +214,7 @@ export default function BlogPostPage() {
                 src={post.image}
                 alt={post.title}
                 fill
+                priority
                 className="object-cover"
                 referrerPolicy="no-referrer"
               />
