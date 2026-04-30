@@ -41,17 +41,17 @@ const team = [
 
 const values = [
   {
-    icon: <LuSparkles className="w-6 h-6 text-teal-600" />,
+    icon: <LuSparkles className="w-6 h-6 text-primary" />,
     title: "Creativity First",
     desc: "We build tools that stay out of the way, letting your ideas shine through.",
   },
   {
-    icon: <LuUsers className="w-6 h-6 text-blue-600" />,
+    icon: <LuUsers className="w-6 h-6 text-secondary" />,
     title: "Inclusive Community",
     desc: "A safe space for diverse perspectives and authentic storytelling.",
   },
   {
-    icon: <LuTarget className="w-6 h-6 text-indigo-600" />,
+    icon: <LuTarget className="w-6 h-6 text-accent" />,
     title: "Radical Transparency",
     desc: "Honest communication with our users about how we build and grow.",
   },
@@ -72,12 +72,12 @@ export default function AboutPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-teal-600 font-bold text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">
             Our Story
           </span>
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black text-foreground mb-8 leading-tight">
             We&apos;re on a mission to{" "}
-            <span className="text-teal-500">democratize storytelling.</span>
+            <span className="text-primary">democratize storytelling.</span>
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed mb-8">
             Blogify started in a small cafe in 2022 with a simple question: Why
@@ -103,17 +103,17 @@ export default function AboutPage() {
             className="object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-teal-500/10 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
         </motion.div>
       </div>
 
       {/* Values Grid */}
       <section className="mb-40">
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Values that drive us
           </h2>
-          <p className="text-slate-500">
+          <p className="text-muted-foreground">
             The core principles behind every decision we make at Blogify.
           </p>
         </div>
@@ -125,15 +125,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 bg-white border border-slate-100 rounded-3xl hover:border-teal-100 hover:shadow-xl hover:shadow-teal-900/5 transition-all"
+              className="p-8 bg-background border border-border rounded-3xl hover:border-primary/10 hover:shadow-xl hover:shadow-teal-900/5 transition-all"
             >
-              <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-muted rounded-2xl flex items-center justify-center mb-6">
                 {v.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3">
+              <h3 className="text-lg font-bold text-foreground mb-3">
                 {v.title}
               </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">{v.desc}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed">{v.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -143,14 +143,14 @@ export default function AboutPage() {
       <section className="mb-40">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4">
               Meet the creators
             </h2>
-            <p className="text-slate-500 max-w-sm">
+            <p className="text-muted-foreground max-w-sm">
               The humans behind the screens building the future of blogging.
             </p>
           </div>
-          <button className="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-sm hover:border-slate-300 transition-all flex items-center gap-2 group">
+          <button className="px-6 py-3 bg-background border border-border rounded-xl font-bold text-sm hover:border-border transition-all flex items-center gap-2 group">
             Work with us{" "}
             <LuArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
@@ -174,19 +174,19 @@ export default function AboutPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-x-4 bottom-4 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex justify-center gap-4">
-                  <FaXTwitter className="w-4 h-4 text-white hover:text-teal-400 cursor-pointer" />
-                  <FaLinkedinIn className="w-4 h-4 text-white hover:text-teal-400 cursor-pointer" />
-                  <FaGithub className="w-4 h-4 text-white hover:text-teal-400 cursor-pointer" />
+                <div className="absolute inset-x-4 bottom-4 p-4 bg-background/10 backdrop-blur-md rounded-2xl border border-white/20 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex justify-center gap-4">
+                  <FaXTwitter className="w-4 h-4 text-white hover:text-primary cursor-pointer" />
+                  <FaLinkedinIn className="w-4 h-4 text-white hover:text-primary cursor-pointer" />
+                  <FaGithub className="w-4 h-4 text-white hover:text-primary cursor-pointer" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">
+              <h3 className="text-xl font-bold text-foreground mb-1">
                 {person.name}
               </h3>
-              <p className="text-teal-600 text-sm font-bold mb-3">
+              <p className="text-primary text-sm font-bold mb-3">
                 {person.role}
               </p>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-xs text-muted-foreground leading-relaxed">
                 {person.bio}
               </p>
             </motion.div>

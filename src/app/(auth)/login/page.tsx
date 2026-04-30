@@ -27,7 +27,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen grid lg:grid-cols-2 bg-white overflow-hidden">
+    <main className="min-h-screen grid lg:grid-cols-2 bg-background overflow-hidden">
       {/* Left side: Content & Image */}
       <div className="hidden lg:flex relative bg-slate-900 items-center justify-center p-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -59,19 +59,19 @@ export default function LoginPage() {
             <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-12">
               <div>
                 <p className="text-3xl font-black text-white">2.5M+</p>
-                <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">
+                <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest mt-1">
                   Readers
                 </p>
               </div>
               <div>
                 <p className="text-3xl font-black text-white">100k</p>
-                <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">
+                <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest mt-1">
                   Authors
                 </p>
               </div>
               <div>
                 <p className="text-3xl font-black text-white">4.9/5</p>
-                <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">
+                <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest mt-1">
                   Rating
                 </p>
               </div>
@@ -80,12 +80,12 @@ export default function LoginPage() {
         </div>
 
         {/* Decorative Circles */}
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
       </div>
 
       {/* Right side: Form */}
-      <div className="flex items-center justify-center p-8 md:p-16 lg:p-24 bg-white relative">
+      <div className="flex items-center justify-center p-8 md:p-16 lg:p-24 bg-background relative">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -96,54 +96,54 @@ export default function LoginPage() {
           </div>
 
           <div className="mb-10 text-center lg:text-left">
-            <h1 className="text-3xl font-black text-slate-900 mb-2">
+            <h1 className="text-3xl font-black text-foreground mb-2">
               Welcome Back
             </h1>
-            <p className="text-slate-500">
+            <p className="text-muted-foreground">
               Sign in to manage your articles and profile.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest ml-1">
+              <label className="text-[10px] font-bold text-foreground uppercase tracking-widest ml-1">
                 Email Address
               </label>
               <div className="relative group">
-                <LuMail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
+                <LuMail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
                 <input
                   type="email"
                   required
                   placeholder="name@company.com"
-                  className="w-full pl-11 pr-4 py-4 bg-slate-50 border-2 border-transparent rounded-[1.25rem] focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                  className="w-full pl-11 pr-4 py-4 bg-muted border-2 border-transparent rounded-[1.25rem] focus:bg-background focus:border-primary/20 focus:ring-4 focus:ring-primary/5 transition-all outline-none text-sm"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
               <div className="flex justify-between items-center px-1">
-                <label className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">
+                <label className="text-[10px] font-bold text-foreground uppercase tracking-widest">
                   Password
                 </label>
                 <Link
                   href="#"
-                  className="text-[10px] font-bold text-teal-600 hover:text-teal-700 uppercase tracking-widest"
+                  className="text-[10px] font-bold text-primary hover:text-teal-700 uppercase tracking-widest"
                 >
                   Forgot password?
                 </Link>
               </div>
               <div className="relative group">
-                <LuLock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500 transition-colors" />
+                <LuLock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
                 <input
                   type={showPassword ? "text" : "password"}
                   required
                   placeholder="••••••••"
-                  className="w-full pl-11 pr-12 py-4 bg-slate-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-teal-500/20 focus:ring-4 focus:ring-teal-500/5 transition-all outline-none text-sm"
+                  className="w-full pl-11 pr-12 py-4 bg-muted border-2 border-transparent rounded-xl focus:bg-background focus:border-primary/20 focus:ring-4 focus:ring-primary/5 transition-all outline-none text-sm"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-slate-600 transition-colors"
                 >
                   {showPassword ? (
                     <LuEyeOff className="w-4 h-4" />
@@ -157,16 +157,16 @@ export default function LoginPage() {
             <div className="flex items-center gap-3 px-1">
               <input
                 type="checkbox"
-                className="w-4 h-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500/20"
+                className="w-4 h-4 rounded border-border text-primary focus:ring-primary/20"
               />
-              <span className="text-xs text-slate-500 font-medium">
+              <span className="text-xs text-muted-foreground font-medium">
                 Keep me signed in for 30 days
               </span>
             </div>
 
             <button
               disabled={isLoading}
-              className="w-full py-4 bg-teal-600 text-white rounded-[1.25rem] font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-teal-600/20 disabled:opacity-50"
+              className="w-full py-4 bg-primary text-white rounded-[1.25rem] font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98] shadow-xl shadow-primary/20 disabled:opacity-50"
             >
               {isLoading ? (
                 <>
@@ -183,29 +183,29 @@ export default function LoginPage() {
 
           <div className="relative my-10 text-center">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-100" />
+              <div className="w-full border-t border-border" />
             </div>
-            <span className="relative px-4 bg-white text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <span className="relative px-4 bg-background text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
               Or login with
             </span>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <button className="flex items-center justify-center gap-2 py-3.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all shadow-sm group">
-              <FaGoogle className="w-4 h-4 text-slate-600 group-hover:text-teal-600 transition-colors" />
+            <button className="flex items-center justify-center gap-2 py-3.5 bg-background border border-border rounded-xl hover:bg-muted transition-all shadow-sm group">
+              <FaGoogle className="w-4 h-4 text-slate-600 group-hover:text-primary transition-colors" />
               <span className="text-xs font-bold text-slate-700">Google</span>
             </button>
-            <button className="flex items-center justify-center gap-2 py-3.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all shadow-sm group">
-              <FaGithub className="w-4 h-4 text-slate-600 group-hover:text-teal-600 transition-colors" />
+            <button className="flex items-center justify-center gap-2 py-3.5 bg-background border border-border rounded-xl hover:bg-muted transition-all shadow-sm group">
+              <FaGithub className="w-4 h-4 text-slate-600 group-hover:text-primary transition-colors" />
               <span className="text-xs font-bold text-slate-700">Github</span>
             </button>
           </div>
 
-          <p className="text-center mt-12 text-sm text-slate-500 font-medium">
+          <p className="text-center mt-12 text-sm text-muted-foreground font-medium">
             New to Blogify?{" "}
             <Link
               href="/register"
-              className="text-teal-600 font-bold hover:underline underline-offset-4 decoration-2 decoration-teal-500/30 transition-all"
+              className="text-primary font-bold hover:underline underline-offset-4 decoration-2 decoration-teal-500/30 transition-all"
             >
               Create an account
             </Link>

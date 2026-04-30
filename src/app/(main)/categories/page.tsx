@@ -21,14 +21,14 @@ const categories = [
     icon: <LuMonitor className="w-5 h-5" />,
     name: "Technology",
     count: "245 Posts",
-    color: "bg-blue-50 text-blue-600",
+    color: "bg-secondary/10 text-secondary",
     image: "https://picsum.photos/seed/technology/400/300",
   },
   {
     icon: <LuMapPin className="w-5 h-5" />,
     name: "Travel",
     count: "182 Posts",
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-primary/10 text-primary",
     image: "https://picsum.photos/seed/travel2/400/300",
   },
   {
@@ -56,7 +56,7 @@ const categories = [
     icon: <LuBriefcase className="w-5 h-5" />,
     name: "Business",
     count: "128 Posts",
-    color: "bg-indigo-50 text-indigo-600",
+    color: "bg-accent/10 text-accent",
     image: "https://picsum.photos/seed/business/400/300",
   },
   {
@@ -91,19 +91,19 @@ export default function CategoriesPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <span className="text-teal-600 font-bold text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">
             Categories
           </span>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-black text-foreground leading-tight">
             Explore your <br className="hidden sm:block" />{" "}
-            <span className="text-teal-500">passions.</span>
+            <span className="text-primary">passions.</span>
           </h1>
         </motion.div>
 
         <motion.p
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-slate-500 text-sm md:text-base max-w-sm mb-2"
+          className="text-muted-foreground text-sm md:text-base max-w-sm mb-2"
         >
           Browse through our curated collection of topics and find stories that
           resonate with you.
@@ -144,7 +144,7 @@ export default function CategoriesPage() {
                     {cat.count}
                   </p>
                 </div>
-                <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
+                <div className="w-10 h-10 bg-background/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
                   <LuTrendingUp className="w-4 h-4 rotate-45" />
                 </div>
               </div>
@@ -155,21 +155,21 @@ export default function CategoriesPage() {
 
       {/* Featured Section */}
       <section className="mt-32">
-        <div className="bg-white border border-slate-100 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-center">
+        <div className="bg-background border border-border rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-center">
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
               Can&apos;t find what you&apos;re looking for?
             </h2>
-            <p className="text-slate-500 mb-8 leading-relaxed">
+            <p className="text-muted-foreground mb-8 leading-relaxed">
               Our community is constantly growing. If you have a unique voice or
               a niche topic, start your own blog and build a community around
               it.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-teal-600 text-white rounded-2xl font-bold hover:bg-teal-700 transition-colors">
+              <button className="px-8 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-primary/90 transition-colors">
                 Start a New Topic
               </button>
-              <button className="px-8 py-4 bg-slate-50 text-slate-900 rounded-2xl font-bold border border-slate-200 hover:border-slate-300 transition-all">
+              <button className="px-8 py-4 bg-muted text-foreground rounded-2xl font-bold border border-border hover:border-border transition-all">
                 Request Category
               </button>
             </div>

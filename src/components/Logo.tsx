@@ -18,10 +18,10 @@ export default function Logo({ className = "", showText = true, dark = false }: 
         className="relative w-11 h-11 flex items-center justify-center"
       >
         {/* Modern Layered Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 rounded-[14px] shadow-lg shadow-teal-500/20 group-hover:shadow-teal-500/40 transition-all duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 rounded-[14px] shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300" />
 
         {/* Glow Effect */}
-        <div className="absolute inset-0 bg-teal-500/30 blur-xl rounded-[14px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+        <div className="absolute inset-0 bg-primary/30 blur-xl rounded-[14px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
         {/* Minimalist Icon */}
         <svg
@@ -59,8 +59,8 @@ export default function Logo({ className = "", showText = true, dark = false }: 
       </motion.div>
 
       {showText && (
-        <span className={`text-2xl font-black tracking-tighter transition-all duration-300 ${dark ? 'text-white' : 'text-slate-900 group-hover:tracking-tight'}`}>
-          BLOG<span className={dark ? 'text-teal-400' : 'text-teal-500'}>IFY</span>
+        <span className={`text-2xl font-black tracking-tighter transition-all duration-300 ${dark ? 'text-white' : 'text-foreground group-hover:tracking-tight'}`}>
+          BLOG<span className={dark ? 'text-primary' : 'text-primary'}>IFY</span>
         </span>
       )}
     </Link>

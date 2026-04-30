@@ -1,2 +1,110 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-fade-in: fade-in 0.3s ease-in-out;
+  --animate-slide-up: slide-up 0.4s ease-out;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+
+    --primary: #0d9488;
+    --primary-foreground: #ffffff;
+    
+    --secondary: #2563eb;
+    --secondary-foreground: #ffffff;
+
+    --accent: #4f46e5;
+    --accent-foreground: #ffffff;
+
+    --muted: #f8fafc;
+    --muted-foreground: #64748b;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #f1f5f9;
+    --input: #f8fafc;
+    --ring: #0d9488;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #020617;
+    --foreground: #f8fafc;
+
+    --primary: #14b8a6;
+    --primary-foreground: #020617;
+    
+    --secondary: #3b82f6;
+    --secondary-foreground: #ffffff;
+
+    --accent: #6366f1;
+    --accent-foreground: #ffffff;
+
+    --muted: #0f172a;
+    --muted-foreground: #94a3b8;
+
+    --destructive: #f87171;
+    --destructive-foreground: #020617;
+
+    --border: #1e293b;
+    --input: #0f172a;
+    --ring: #14b8a6;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}

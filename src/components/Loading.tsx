@@ -10,21 +10,21 @@ export default function Loading() {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 rounded-full border-4 border-teal-100 border-t-teal-600"
+          className="absolute inset-0 rounded-full border-4 border-primary/10 border-t-teal-600"
         />
         
         {/* Inner Ring */}
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-4 rounded-full border-4 border-slate-100 border-t-slate-400"
+          className="absolute inset-4 rounded-full border-4 border-border border-t-slate-400"
         />
         
         {/* Center Dot */}
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 1, repeat: Infinity }}
-          className="absolute inset-[34px] bg-teal-600 rounded-full shadow-lg shadow-teal-500/50"
+          className="absolute inset-[34px] bg-primary rounded-full shadow-lg shadow-primary/50"
         />
       </div>
       
@@ -34,7 +34,7 @@ export default function Loading() {
         transition={{ delay: 0.2 }}
         className="mt-8 text-center"
       >
-        <p className="text-sm font-black uppercase tracking-widest text-slate-400 animate-pulse">
+        <p className="text-sm font-black uppercase tracking-widest text-muted-foreground animate-pulse">
           Loading amazing stories...
         </p>
       </motion.div>

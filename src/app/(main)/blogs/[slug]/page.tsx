@@ -77,12 +77,12 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
         <h1 className="text-4xl font-black mb-4">Post Not Found</h1>
-        <p className="text-slate-500 mb-8">
+        <p className="text-muted-foreground mb-8">
           The story you are looking for does not exist or has been moved.
         </p>
         <Link
           href="/blogs"
-          className="px-8 py-3 bg-teal-600 text-white rounded-2xl font-bold transition-all hover:scale-105"
+          className="px-8 py-3 bg-primary text-white rounded-2xl font-bold transition-all hover:scale-105"
         >
           Go back to Blog
         </Link>
@@ -91,26 +91,26 @@ export default function BlogPostPage() {
   }
 
   return (
-    <main className="relative bg-white pb-24">
+    <main className="relative bg-background pb-24">
       {/* Reading Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-teal-500 origin-left z-60"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-60"
         style={{ scaleX }}
       />
 
       {/* Floating Share Bar (Desktop) */}
-      <div className="hidden xl:block fixed left-1/2 -ml-160 top-48 z-40 bg-white border border-slate-100 rounded-full p-2 shadow-xl shadow-slate-200/50">
+      <div className="hidden xl:block fixed left-1/2 -ml-160 top-48 z-40 bg-background border border-border rounded-full p-2 shadow-xl shadow-slate-200/50">
         <div className="flex flex-col gap-2">
           {[
             {
               icon: LuThumbsUp,
-              color: isLiked ? "text-teal-600 bg-teal-50" : "text-slate-400",
+              color: isLiked ? "text-primary bg-primary/10" : "text-muted-foreground",
               onClick: () => setIsLiked(!isLiked),
             },
             { icon: FaXTwitter, color: "text-sky-400 hover:bg-sky-50" },
-            { icon: FaLinkedinIn, color: "text-blue-600 hover:bg-blue-50" },
-            { icon: FaFacebookF, color: "text-indigo-600 hover:bg-indigo-50" },
-            { icon: LuBookmark, color: "text-slate-400 hover:bg-slate-50" },
+            { icon: FaLinkedinIn, color: "text-secondary hover:bg-secondary/10" },
+            { icon: FaFacebookF, color: "text-accent hover:bg-accent/10" },
+            { icon: LuBookmark, color: "text-muted-foreground hover:bg-muted" },
           ].map((item, i) => (
             <button
               key={i}
@@ -120,8 +120,8 @@ export default function BlogPostPage() {
               <item.icon className="w-5 h-5" />
             </button>
           ))}
-          <div className="w-6 h-px bg-slate-100 mx-auto my-1" />
-          <button className="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-teal-600 hover:bg-teal-50 transition-all">
+          <div className="w-6 h-px bg-muted mx-auto my-1" />
+          <button className="w-10 h-10 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all">
             <LuEllipsis className="w-5 h-5" />
           </button>
         </div>
@@ -131,9 +131,9 @@ export default function BlogPostPage() {
         <div className="pt-12 mb-16">
           <Link
             href="/blogs"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-teal-600 transition-all font-bold text-[10px] uppercase tracking-[0.2em] mb-12 group"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-all font-bold text-[10px] uppercase tracking-[0.2em] mb-12 group"
           >
-            <div className="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-teal-50 transition-colors">
+            <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-colors">
               <LuArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
             </div>
             Back to Articles
@@ -150,17 +150,17 @@ export default function BlogPostPage() {
                 >
                   {post.tag}
                 </span>
-                <div className="flex items-center gap-2 text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-muted-foreground text-[10px] font-black uppercase tracking-widest">
                   <LuClock className="w-3.5 h-3.5" />
                   {post.readTime}
                 </div>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] tracking-tight mb-10">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-foreground leading-[1.1] tracking-tight mb-10">
                 {post.title}
               </h1>
 
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 py-8 border-y border-slate-100">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 py-8 border-y border-border">
                 <div className="flex items-center gap-4">
                   <div className="relative w-14 h-14">
                     <Image
@@ -170,18 +170,18 @@ export default function BlogPostPage() {
                       className="rounded-full object-cover ring-4 ring-slate-50 shadow-md"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-teal-500 border-2 border-white rounded-full" />
+                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-primary border-2 border-white rounded-full" />
                   </div>
                   <div>
-                    <p className="font-black text-slate-900 text-lg leading-tight">
+                    <p className="font-black text-foreground text-lg leading-tight">
                       {post.author}
                     </p>
-                    <div className="flex items-center gap-3 text-xs text-slate-500 font-medium mt-1">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground font-medium mt-1">
                       <span className="flex items-center gap-1.5">
                         <LuCalendar className="w-3.5 h-3.5" /> {post.date}
                       </span>
                       <span className="w-1 h-1 bg-slate-200 rounded-full" />
-                      <span className="text-teal-600 font-bold">
+                      <span className="text-primary font-bold">
                         Verified Expert
                       </span>
                     </div>
@@ -189,10 +189,10 @@ export default function BlogPostPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <button className="flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-2xl font-bold text-sm shadow-lg shadow-teal-600/20 hover:bg-teal-700 transition-all hover:scale-105 active:scale-95">
+                  <button className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-2xl font-bold text-sm shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95">
                     <LuShare2 className="w-4 h-4" /> Share Article
                   </button>
-                  <button className="p-3 bg-slate-50 text-slate-400 rounded-2xl hover:text-teal-600 hover:bg-teal-50 transition-all border border-transparent hover:border-teal-100">
+                  <button className="p-3 bg-muted text-muted-foreground rounded-2xl hover:text-primary hover:bg-primary/10 transition-all border border-transparent hover:border-primary/10">
                     <LuBookmark className="w-5 h-5" />
                   </button>
                 </div>
@@ -223,17 +223,17 @@ export default function BlogPostPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="prose prose-slate lg:prose-xl max-w-none prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed prose-blockquote:border-teal-500 prose-blockquote:bg-teal-50 prose-blockquote:py-2 prose-blockquote:rounded-r-2xl prose-strong:text-slate-900 prose-a:text-teal-600 hover:prose-a:text-teal-700 transition-all"
+              className="prose prose-slate lg:prose-xl max-w-none prose-headings:font-black prose-headings:text-foreground prose-p:text-slate-600 prose-p:leading-relaxed prose-blockquote:border-primary prose-blockquote:bg-primary/10 prose-blockquote:py-2 prose-blockquote:rounded-r-2xl prose-strong:text-foreground prose-a:text-primary hover:prose-a:text-teal-700 transition-all"
             >
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </motion.article>
 
             {/* Tags section */}
-            <div className="flex flex-wrap gap-3 mt-16 pb-16 border-b border-slate-100">
+            <div className="flex flex-wrap gap-3 mt-16 pb-16 border-b border-border">
               {["Writing", "Inspiration", post.tag].map((t) => (
                 <span
                   key={t}
-                  className="px-4 py-2 bg-slate-50 text-slate-500 rounded-xl text-xs font-bold border border-slate-100 hover:border-teal-200 hover:text-teal-600 transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-muted text-muted-foreground rounded-xl text-xs font-bold border border-border hover:border-teal-200 hover:text-primary transition-colors cursor-pointer"
                 >
                   #{t}
                 </span>
@@ -241,8 +241,8 @@ export default function BlogPostPage() {
             </div>
 
             {/* Author Card Footer */}
-            <div className="mt-20 p-8 md:p-12 bg-slate-950 rounded-4xl md:rounded-[3rem] text-white relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="mt-20 p-8 md:p-12 bg-background rounded-4xl md:rounded-[3rem] text-white relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10 flex flex-col md:flex-row gap-10 items-center">
                 <div className="relative w-32 h-32 shrink-0 group-hover:scale-110 transition-transform duration-500">
                   <Image
@@ -252,7 +252,7 @@ export default function BlogPostPage() {
                     className="rounded-3xl object-cover shadow-2xl rotate-3 group-hover:rotate-0 transition-transform"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute -bottom-4 inset-x-0 mx-auto w-max px-3 py-1 bg-teal-500 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-lg">
+                  <div className="absolute -bottom-4 inset-x-0 mx-auto w-max px-3 py-1 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-lg">
                     Author
                   </div>
                 </div>
@@ -260,18 +260,18 @@ export default function BlogPostPage() {
                   <h3 className="text-3xl font-black mb-4">
                     Meet {post.author}
                   </h3>
-                  <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-lg">
+                  <p className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-lg">
                     {post.bio}
                   </p>
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-                    <button className="px-6 py-3 bg-white text-slate-950 rounded-2xl font-bold text-sm hover:bg-teal-50 transition-all flex items-center gap-2">
+                    <button className="px-6 py-3 bg-background text-foreground rounded-2xl font-bold text-sm hover:bg-primary/10 transition-all flex items-center gap-2">
                       <LuUser className="w-4 h-4" /> Follow Author
                     </button>
                     <div className="flex items-center gap-2">
                       {[FaXTwitter, FaLinkedinIn, FaGithub].map((Icon, i) => (
                         <button
                           key={i}
-                          className="w-10 h-10 rounded-xl border border-white/10 hover:bg-white/10 flex items-center justify-center transition-colors"
+                          className="w-10 h-10 rounded-xl border border-white/10 hover:bg-background/10 flex items-center justify-center transition-colors"
                         >
                           <Icon className="w-4 h-4" />
                         </button>
@@ -286,26 +286,26 @@ export default function BlogPostPage() {
             <section className="mt-24 mb-24">
               <div className="flex items-center justify-between mb-12">
                 <div className="flex items-center gap-4">
-                  <h2 className="text-3xl font-black text-slate-900">
+                  <h2 className="text-3xl font-black text-foreground">
                     Discussion
                   </h2>
-                  <span className="px-3 py-1 bg-teal-50 text-teal-600 rounded-xl text-xs font-extrabold leading-none">
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-xl text-xs font-extrabold leading-none">
                     12 Comments
                   </span>
                 </div>
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
                   <LuClock className="w-4 h-4" /> Sort by: Newest
                 </div>
               </div>
 
-              <div className="bg-slate-50 rounded-[2.5rem] p-4 mb-12">
-                <div className="bg-white rounded-4xl p-6 shadow-sm">
+              <div className="bg-muted rounded-[2.5rem] p-4 mb-12">
+                <div className="bg-background rounded-4xl p-6 shadow-sm">
                   <textarea
                     placeholder="What are your thoughts on this story?"
                     className="w-full text-base text-slate-700 bg-transparent border-none focus:ring-0 outline-none resize-none min-h-35 placeholder:text-slate-300"
                   />
-                  <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-slate-400">
+                  <div className="pt-4 border-t border-border flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-muted-foreground">
                       <button className="hover:text-slate-600 p-2">
                         <LuShare2 className="w-5 h-5" />
                       </button>
@@ -334,10 +334,10 @@ export default function BlogPostPage() {
                   </div>
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <h4 className="font-black text-slate-900">
+                      <h4 className="font-black text-foreground">
                         Sarah Jenkins
                       </h4>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                      <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
                         2 hours ago
                       </span>
                     </div>
@@ -348,10 +348,10 @@ export default function BlogPostPage() {
                       stacking my meditation with my morning tea.
                     </p>
                     <div className="flex items-center gap-6">
-                      <button className="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-teal-600 transition-colors uppercase tracking-widest">
+                      <button className="flex items-center gap-2 text-xs font-bold text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest">
                         <LuThumbsUp className="w-3.5 h-3.5" /> 14
                       </button>
-                      <button className="text-xs font-bold text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-widest">
+                      <button className="text-xs font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
                         Reply
                       </button>
                     </div>
@@ -365,12 +365,12 @@ export default function BlogPostPage() {
           <aside className="lg:col-span-4 hidden lg:block">
             <div className="sticky top-28 space-y-12">
               {/* Newsletter Widget */}
-              <div className="bg-teal-600 rounded-[2.5rem] p-8 text-white relative overflow-hidden group shadow-2xl shadow-teal-600/20">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+              <div className="bg-primary rounded-[2.5rem] p-8 text-white relative overflow-hidden group shadow-2xl shadow-primary/20">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-background/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                 <h3 className="text-2xl font-black mb-4 relative z-10">
                   Get the best of Blogify
                 </h3>
-                <p className="text-teal-50 text-sm mb-8 leading-relaxed opacity-90 relative z-10">
+                <p className="text-primary/10 text-sm mb-8 leading-relaxed opacity-90 relative z-10">
                   Join our newsletter and get the weekly digest of the best
                   stories from around the world.
                 </p>
@@ -378,24 +378,24 @@ export default function BlogPostPage() {
                   <input
                     type="email"
                     placeholder="your@email.com"
-                    className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-2xl text-sm text-white placeholder:text-teal-100/50 focus:outline-none focus:bg-white/20 transition-all font-medium"
+                    className="w-full px-5 py-4 bg-background/10 border border-white/20 rounded-2xl text-sm text-white placeholder:text-primary/10/50 focus:outline-none focus:bg-background/20 transition-all font-medium"
                   />
-                  <button className="w-full py-4 bg-white text-teal-600 rounded-2xl font-black text-sm hover:bg-teal-50 transition-all shadow-xl shadow-black/10">
+                  <button className="w-full py-4 bg-background text-primary rounded-2xl font-black text-sm hover:bg-primary/10 transition-all shadow-xl shadow-black/10">
                     Subscribe Now
                   </button>
                 </div>
-                <p className="text-[10px] text-teal-100/50 text-center font-bold uppercase tracking-widest mt-6">
+                <p className="text-[10px] text-primary/10/50 text-center font-bold uppercase tracking-widest mt-6">
                   No spam. Ever.
                 </p>
               </div>
 
               {/* Suggested Articles */}
               <div>
-                <h3 className="text-lg font-black text-slate-900 mb-8 flex items-center justify-between">
+                <h3 className="text-lg font-black text-foreground mb-8 flex items-center justify-between">
                   Related Articles
                   <Link
                     href="/blogs"
-                    className="text-teal-600 text-[10px] uppercase tracking-widest hover:underline"
+                    className="text-primary text-[10px] uppercase tracking-widest hover:underline"
                   >
                     View All
                   </Link>
@@ -407,7 +407,7 @@ export default function BlogPostPage() {
                       href={`/blogs/${sp.slug}`}
                       className="group flex gap-5 items-start"
                     >
-                      <div className="relative w-24 h-24 shrink-0 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+                      <div className="relative w-24 h-24 shrink-0 rounded-2xl overflow-hidden shadow-lg border border-border">
                         <Image
                           src={sp.image}
                           alt={sp.title}
@@ -422,10 +422,10 @@ export default function BlogPostPage() {
                         >
                           {sp.tag}
                         </span>
-                        <h4 className="font-black text-slate-900 text-sm leading-snug group-hover:text-teal-600 transition-colors line-clamp-2">
+                        <h4 className="font-black text-foreground text-sm leading-snug group-hover:text-primary transition-colors line-clamp-2">
                           {sp.title}
                         </h4>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-2">
+                        <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mt-2">
                           {sp.date}
                         </p>
                       </div>
@@ -435,7 +435,7 @@ export default function BlogPostPage() {
               </div>
 
               {/* Sticky Footer Info */}
-              <div className="pt-12 border-t border-slate-100">
+              <div className="pt-12 border-t border-border">
                 <div className="flex flex-wrap gap-4 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
                   <Link href="/contact" className="hover:text-slate-600">
                     Contact
@@ -457,20 +457,20 @@ export default function BlogPostPage() {
       </div>
 
       {/* Suggested reading at the bottom (Mobile/Tablet and Desktop) */}
-      <section className="bg-slate-50 mt-32 py-32 overflow-hidden relative">
+      <section className="bg-muted mt-32 py-32 overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-slate-200 to-transparent" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
             <div>
-              <h2 className="text-4xl font-black text-slate-900 mb-2">
+              <h2 className="text-4xl font-black text-foreground mb-2">
                 More from Blogify
               </h2>
-              <p className="text-slate-500 font-medium tracking-tight">
+              <p className="text-muted-foreground font-medium tracking-tight">
                 Keep reading the most inspiring stories of the week.
               </p>
             </div>
             <Link href="/blogs">
-              <button className="px-8 py-4 bg-white text-slate-900 rounded-2xl font-black text-sm flex items-center gap-2 hover:bg-slate-50 transition-all border border-slate-200 shadow-sm">
+              <button className="px-8 py-4 bg-background text-foreground rounded-2xl font-black text-sm flex items-center gap-2 hover:bg-muted transition-all border border-border shadow-sm">
                 Explore All Articles{" "}
                 <LuArrowLeft className="w-4 h-4 rotate-180" />
               </button>
@@ -484,7 +484,7 @@ export default function BlogPostPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 hover:shadow-2xl transition-all h-full flex flex-col shadow-sm"
+                className="group bg-background rounded-[2.5rem] overflow-hidden border border-border hover:shadow-2xl transition-all h-full flex flex-col shadow-sm"
               >
                 <Link
                   href={`/blogs/${sp.slug}`}
@@ -504,7 +504,7 @@ export default function BlogPostPage() {
                   </div>
                 </Link>
                 <div className="p-8 flex flex-col flex-1">
-                  <h3 className="text-xl font-black text-slate-900 mb-6 leading-tight group-hover:text-teal-600 transition-colors">
+                  <h3 className="text-xl font-black text-foreground mb-6 leading-tight group-hover:text-primary transition-colors">
                     {sp.title}
                   </h3>
                   <div className="mt-auto flex items-center justify-between">
@@ -517,11 +517,11 @@ export default function BlogPostPage() {
                         className="rounded-full shadow-sm"
                         referrerPolicy="no-referrer"
                       />
-                      <span className="font-bold text-slate-900 text-xs">
+                      <span className="font-bold text-foreground text-xs">
                         {sp.author}
                       </span>
                     </div>
-                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    <div className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">
                       {sp.date}
                     </div>
                   </div>

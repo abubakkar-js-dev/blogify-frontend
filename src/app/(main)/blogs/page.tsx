@@ -128,7 +128,7 @@ function BlogContent() {
   const gridPosts = featuredPost ? currentPosts.slice(1) : currentPosts;
 
   return (
-    <main className="max-w-7xl mx-auto px-6 pt-12 pb-24 text-slate-900">
+    <main className="max-w-7xl mx-auto px-6 pt-12 pb-24 text-foreground">
       {/* Header & Filters */}
       <div className="mb-12">
         <motion.div
@@ -138,25 +138,25 @@ function BlogContent() {
         >
           <div>
             <h1 className="text-4xl md:text-5xl font-black mb-2">Our Blogs</h1>
-            <p className="text-slate-500">
+            <p className="text-muted-foreground">
               Discover stories, thinking, and expertise from writers everywhere.
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <div className="relative group">
-              <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-teal-500" />
+              <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles..."
-                className="pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-teal-500/20 outline-none w-full md:w-64 transition-all"
+                className="pl-10 pr-4 py-2.5 bg-background border border-border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 outline-none w-full md:w-64 transition-all"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 hover:text-slate-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground hover:text-slate-600"
                 >
                   <LuX className="w-3 h-3" />
                 </button>
@@ -167,13 +167,13 @@ function BlogContent() {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`p-2.5 border rounded-xl transition-all flex items-center gap-2 ${
                   showFilters
-                    ? "bg-teal-50 border-teal-200 text-teal-600"
-                    : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+                    ? "bg-primary/10 border-teal-200 text-primary"
+                    : "bg-background border-border text-slate-600 hover:bg-muted"
                 }`}
               >
                 <LuFilter className="w-5 h-5" />
                 {(sortBy !== "newest" || readTimeFilter !== "all") && (
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-teal-500 rounded-full border-2 border-white" />
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full border-2 border-white" />
                 )}
               </button>
 
@@ -183,10 +183,10 @@ function BlogContent() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute right-0 mt-2 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 p-6"
+                    className="absolute right-0 mt-2 w-72 bg-background border border-border rounded-2xl shadow-xl z-50 p-6"
                   >
                     <div className="mb-6">
-                      <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2">
+                      <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
                         Sorting
                       </p>
                       <div className="grid grid-cols-2 gap-2">
@@ -201,8 +201,8 @@ function BlogContent() {
                             }
                             className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                               sortBy === opt.id
-                                ? "bg-teal-600 text-white"
-                                : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                                ? "bg-primary text-white"
+                                : "bg-muted text-slate-600 hover:bg-muted"
                             }`}
                           >
                             {opt.label}
@@ -212,7 +212,7 @@ function BlogContent() {
                     </div>
 
                     <div className="mb-6">
-                      <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2">
+                      <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
                         Read Time
                       </p>
                       <div className="grid grid-cols-2 gap-2">
@@ -231,8 +231,8 @@ function BlogContent() {
                             }
                             className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                               readTimeFilter === opt.id
-                                ? "bg-teal-600 text-white"
-                                : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                                ? "bg-primary text-white"
+                                : "bg-muted text-slate-600 hover:bg-muted"
                             }`}
                           >
                             {opt.label}
@@ -248,7 +248,7 @@ function BlogContent() {
                         setSelectedCategory("All");
                         setSearchQuery("");
                       }}
-                      className="w-full py-2 flex items-center justify-center gap-2 text-xs font-bold text-slate-400 hover:text-rose-500 transition-colors"
+                      className="w-full py-2 flex items-center justify-center gap-2 text-xs font-bold text-muted-foreground hover:text-rose-500 transition-colors"
                     >
                       <LuX className="w-3 h-3" /> Reset all
                     </button>
@@ -266,8 +266,8 @@ function BlogContent() {
               onClick={() => setSelectedCategory(cat.name)}
               className={`px-4 py-2 rounded-full text-xs font-bold border transition-all whitespace-nowrap ${
                 selectedCategory === cat.name
-                  ? "bg-teal-600 border-teal-600 text-white shadow-lg shadow-teal-600/20 scale-105"
-                  : "bg-white border-slate-200 text-slate-600 hover:border-teal-300"
+                  ? "bg-primary border-primary text-white shadow-lg shadow-primary/20 scale-105"
+                  : "bg-background border-border text-slate-600 hover:border-teal-300"
               }`}
             >
               {cat.name}
@@ -293,13 +293,13 @@ function BlogContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="text-center py-24 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200"
+            className="text-center py-24 bg-muted rounded-[3rem] border-2 border-dashed border-border"
           >
-            <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <LuSearch className="w-8 h-8 text-slate-400" />
+            <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
+              <LuSearch className="w-8 h-8 text-muted-foreground" />
             </div>
             <h3 className="text-2xl font-bold mb-2">No articles found</h3>
-            <p className="text-slate-500 mb-8">
+            <p className="text-muted-foreground mb-8">
               Try adjusting your search or category filters.
             </p>
             <button
@@ -309,7 +309,7 @@ function BlogContent() {
                 setSortBy("newest");
                 setReadTimeFilter("all");
               }}
-              className="px-6 py-3 bg-teal-600 text-white rounded-xl font-bold text-sm shadow-xl shadow-teal-600/20"
+              className="px-6 py-3 bg-primary text-white rounded-xl font-bold text-sm shadow-xl shadow-primary/20"
             >
               Clear all filters
             </button>
@@ -346,7 +346,7 @@ function BlogContent() {
                       {featuredPost.tag}
                     </span>
                     <div className="flex items-center gap-2 text-white/80 text-[10px] font-bold uppercase tracking-widest leading-none">
-                      <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                       {featuredPost.readTime}
                     </div>
                   </div>
@@ -369,13 +369,13 @@ function BlogContent() {
                         <p className="text-xs sm:text-sm font-bold">
                           {featuredPost.author}
                         </p>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                        <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
                           {featuredPost.date}
                         </p>
                       </div>
                     </div>
                     <Link href={`/blogs/${featuredPost.slug}`}>
-                      <button className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-white text-slate-900 rounded-xl font-bold text-xs sm:text-sm hover:bg-teal-50 transition-all flex items-center justify-center gap-2 group/btn">
+                      <button className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-background text-foreground rounded-xl font-bold text-xs sm:text-sm hover:bg-primary/10 transition-all flex items-center justify-center gap-2 group/btn">
                         Read Article{" "}
                         <LuChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                       </button>
@@ -395,7 +395,7 @@ function BlogContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group flex flex-col h-full bg-white border border-slate-100 rounded-4xl overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all"
+                  className="group flex flex-col h-full bg-background border border-border rounded-4xl overflow-hidden hover:shadow-2xl hover:shadow-slate-200 transition-all"
                 >
                   <Link
                     href={`/blogs/${post.slug}`}
@@ -414,14 +414,14 @@ function BlogContent() {
                       {post.tag}
                     </div>
                     <div className="absolute top-4 right-4 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                      <button className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-600 hover:text-teal-600">
+                      <button className="p-2 bg-background/90 backdrop-blur rounded-full text-slate-600 hover:text-primary">
                         <LuBookmark className="w-4 h-4" />
                       </button>
                     </div>
                   </Link>
 
                   <div className="p-8 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">
+                    <div className="flex items-center gap-3 text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-4">
                       <div className="flex items-center gap-1">
                         <LuCalendar className="w-3 h-3" />
                         {post.date}
@@ -437,16 +437,16 @@ function BlogContent() {
                       href={`/blogs/${post.slug}`}
                       className="block mb-4 group/title"
                     >
-                      <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover/title:text-teal-600 transition-colors line-clamp-2 min-h-12">
+                      <h3 className="text-xl font-bold text-foreground leading-tight group-hover/title:text-primary transition-colors line-clamp-2 min-h-12">
                         {post.title}
                       </h3>
                     </Link>
 
-                    <p className="text-sm text-slate-500 mb-8 line-clamp-3 leading-relaxed flex-1">
+                    <p className="text-sm text-muted-foreground mb-8 line-clamp-3 leading-relaxed flex-1">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between pt-6 border-t border-slate-50">
+                    <div className="flex items-center justify-between pt-6 border-t border-border">
                       <div className="flex items-center gap-3">
                         <Image
                           src={post.avatar}
@@ -456,15 +456,15 @@ function BlogContent() {
                           className="rounded-full object-cover"
                         />
                         <div className="text-xs">
-                          <p className="font-bold text-slate-900">
+                          <p className="font-bold text-foreground">
                             {post.author}
                           </p>
-                          <p className="text-[10px] text-slate-400">
+                          <p className="text-[10px] text-muted-foreground">
                             Verified Writer
                           </p>
                         </div>
                       </div>
-                      <button className="p-2 text-slate-400 hover:text-teal-600 transition-colors">
+                      <button className="p-2 text-muted-foreground hover:text-primary transition-colors">
                         <LuShare2 className="w-4 h-4" />
                       </button>
                     </div>
@@ -487,14 +487,14 @@ function BlogContent() {
             disabled={currentPage === 1}
             className={`w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 ${
               currentPage === 1
-                ? "bg-slate-50 text-slate-300 cursor-not-allowed opacity-50"
-                : "bg-white border border-slate-100 text-slate-600 hover:border-teal-500 hover:text-teal-600 hover:shadow-lg hover:shadow-teal-500/10"
+                ? "bg-muted text-slate-300 cursor-not-allowed opacity-50"
+                : "bg-background border border-border text-slate-600 hover:border-primary hover:text-primary hover:shadow-lg hover:shadow-primary/10"
             }`}
           >
             <LuChevronRight className="w-5 h-5 rotate-180" />
           </button>
 
-          <div className="flex items-center gap-2 bg-slate-50 p-1.5 rounded-3xl border border-slate-100 shadow-inner">
+          <div className="flex items-center gap-2 bg-muted p-1.5 rounded-3xl border border-border shadow-inner">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
@@ -504,15 +504,15 @@ function BlogContent() {
                 }}
                 className={`w-12 h-12 flex items-center justify-center rounded-2xl text-sm font-black transition-all duration-300 relative overflow-hidden ${
                   page === currentPage
-                    ? "bg-teal-600 text-white shadow-[0_8px_20px_-6px_rgba(13,148,136,0.5)] scale-110 z-10"
-                    : "text-slate-500 hover:bg-white hover:text-teal-600 hover:shadow-sm"
+                    ? "bg-primary text-white shadow-[0_8px_20px_-6px_rgba(13,148,136,0.5)] scale-110 z-10"
+                    : "text-muted-foreground hover:bg-background hover:text-primary hover:shadow-sm"
                 }`}
               >
                 {page}
                 {page === currentPage && (
                   <motion.div
                     layoutId="pagination-active"
-                    className="absolute inset-0 bg-teal-600 -z-10"
+                    className="absolute inset-0 bg-primary -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -528,8 +528,8 @@ function BlogContent() {
             disabled={currentPage === totalPages}
             className={`w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 ${
               currentPage === totalPages
-                ? "bg-slate-50 text-slate-300 cursor-not-allowed opacity-50"
-                : "bg-white border border-slate-100 text-slate-600 hover:border-teal-500 hover:text-teal-600 hover:shadow-lg hover:shadow-teal-500/10"
+                ? "bg-muted text-slate-300 cursor-not-allowed opacity-50"
+                : "bg-background border border-border text-slate-600 hover:border-primary hover:text-primary hover:shadow-lg hover:shadow-primary/10"
             }`}
           >
             <LuChevronRight className="w-5 h-5" />

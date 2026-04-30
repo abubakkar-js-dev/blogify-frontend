@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} min-h-screen bg-slate-50 selection:bg-teal-100 selection:text-teal-900`}
+        className={`${inter.className} min-h-screen bg-muted selection:bg-primary/10 selection:text-teal-900`}
       >
         {children}
       </body>
