@@ -49,17 +49,17 @@
 
 2. **Install dependencies**:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Run the development server**:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 4. **Build for production**:
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 ---
