@@ -17,22 +17,24 @@ import {
   LuX,
 } from "react-icons/lu";
 
-import Loading from "@/components/Loading";
+
 import {
   BlogCategory,
   BlogPost,
-  getAllCategories,
-  getAllPosts,
+  categoriesData,
   postsData,
 } from "@/lib/blog-data";
 
 function BlogContent() {
   const searchParams = useSearchParams();
-  const [posts, setPosts] = useState<BlogPost[]>(postsData as BlogPost[]);
-  const [categoryList, setCategoryList] = useState<BlogCategory[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
+  const posts = postsData as BlogPost[];
+  const categoryList = [
+    { name: "All", icon: "", color: "", count: "" } as BlogCategory,
+    ...categoriesData,
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get("category") || "All");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [sortBy, setSortBy] = useState<"newest" | "oldest">("newest");
   const [readTimeFilter, setReadTimeFilter] = useState<
     "all" | "short" | "medium" | "long"
@@ -41,50 +43,18 @@ function BlogContent() {
   const [showFilters, setShowFilters] = useState(false);
   const postsPerPage = 6;
 
+  // Sync state with URL params
   useEffect(() => {
-    async function fetchData() {
-      setIsLoading(true);
-      try {
-        const [fetchedPosts, fetchedCategories] = await Promise.all([
-          getAllPosts(),
-          getAllCategories(),
-        ]);
-        setPosts(fetchedPosts);
-        setCategoryList([
-          { name: "All", icon: "", color: "", count: "" } as BlogCategory,
-          ...fetchedCategories,
-        ]);
-      } catch (error) {
-        console.error("Failed to fetch blog data:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+    const q = searchParams.get("q");
+    const category = searchParams.get("category");
+    if (q !== null) setSearchQuery(q);
+    if (category !== null) setSelectedCategory(category);
+  }, [searchParams]);
 
-  // Sync state with URL params (adjusting state during render)
-  const queryParam = searchParams.get("q");
-  const categoryParam = searchParams.get("category");
-  const [prevParams, setPrevParams] = useState({ queryParam, categoryParam });
-
-  if (queryParam !== prevParams.queryParam || categoryParam !== prevParams.categoryParam) {
-    if (queryParam && queryParam !== searchQuery) setSearchQuery(queryParam);
-    if (categoryParam && categoryParam !== selectedCategory) setSelectedCategory(categoryParam);
-    setPrevParams({ queryParam, categoryParam });
-  }
-
-  // Reset page when filtering changes (adjusting state during render)
-  const [prevFilters, setPrevFilters] = useState({ selectedCategory, searchQuery, sortBy, readTimeFilter });
-  if (
-    selectedCategory !== prevFilters.selectedCategory ||
-    searchQuery !== prevFilters.searchQuery ||
-    sortBy !== prevFilters.sortBy ||
-    readTimeFilter !== prevFilters.readTimeFilter
-  ) {
+  // Reset page when filtering changes
+  useEffect(() => {
     setCurrentPage(1);
-    setPrevFilters({ selectedCategory, searchQuery, sortBy, readTimeFilter });
-  }
+  }, [selectedCategory, searchQuery, sortBy, readTimeFilter]);
 
   const filteredPosts = useMemo(() => {
     let result = posts.filter((post) => {
@@ -277,17 +247,7 @@ function BlogContent() {
       </div>
 
       <AnimatePresence mode="wait">
-        {isLoading ? (
-          <motion.div
-            key="loading"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="py-24"
-          >
-            <Loading />
-          </motion.div>
-        ) : filteredPosts.length === 0 ? (
+        {filteredPosts.length === 0 ? (
           <motion.div
             key="no-results"
             initial={{ opacity: 0 }}
